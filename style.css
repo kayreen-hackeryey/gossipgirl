@@ -1021,4 +1021,44 @@ footer {
         height: 55px;
     }
 
+}/* =========================
+   NEWS FEED
+========================= */
+
+.news-feed {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    max-height: 650px;
+
+    overflow-y: auto;
+
+    padding-right: 8px;
+}
+
+
+/* scrollbar */
+
+.news-feed::-webkit-scrollbar {
+    width: 5px;
+}
+
+.news-feed::-webkit-scrollbar-thumb {
+    background: rgba(241, 243, 173, 0.5);
+
+    border-radius: 10px;
+}
+
+
+/* don't make cards too huge */
+
+.news-feed .gossip-card {
+    width: min(100%, 430px);
+
+    margin: 0 auto;
 }
