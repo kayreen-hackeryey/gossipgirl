@@ -7,7 +7,7 @@ function showCharacter(name) {
     const messages = {
 
         Serena:
-            "Spotted: Serena van der Woodsen is back on the Upper East Side...",
+            "Spotted: Serena van der Woodsen is back on the Margonda...",
 
         Blair:
             "Queen B has entered the chat. Everyone else, take notes.",
@@ -40,7 +40,7 @@ function readMore() {
 
 
 /* =====================================================
-   OPEN GOSSIP FORM
+   OPEN SUBMIT FORM
 ===================================================== */
 
 function openGossipForm() {
@@ -53,7 +53,7 @@ function openGossipForm() {
 
 
 /* =====================================================
-   CLOSE GOSSIP FORM
+   CLOSE SUBMIT FORM
 ===================================================== */
 
 function closeGossipForm() {
@@ -152,7 +152,7 @@ function submitGossip() {
 
 
 /* =====================================================
-   DISPLAY COMMUNITY GOSSIP
+   DISPLAY USER GOSSIP
 ===================================================== */
 
 function displayGossip() {
