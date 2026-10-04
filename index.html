@@ -1,0 +1,1228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gossip Girl — The Inner Circle</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black: #171514;
+  --dark: #211e1c;
+  --cream: #f8f5ef;
+  --paper: #fffdf9;
+  --gold: #b69a68;
+  --gold-light: #d7c49e;
+  --burgundy: #702d3a;
+  --muted: #89837b;
+  --line: #e9e3d9;
+  --shadow: 0 12px 40px rgba(32, 25, 19, .07);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--cream);
+  color: var(--black);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.topbar {
+  height: 42px;
+  background: var(--black);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 0 12px;
+  text-align: center;
+}
+
+.masthead {
+  text-align: center;
+  padding: 38px 20px 26px;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 9vw, 94px);
+  line-height: .9;
+  font-weight: 600;
+  letter-spacing: -4px;
+}
+
+.logo span {
+  color: var(--burgundy);
+}
+
+.tagline {
+  margin-top: 15px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: #777067;
+}
+
+.nav {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  padding: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav button {
+  background: none;
+  border: none;
+  color: #625c55;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 2px;
+  transition: color .2s;
+}
+
+.nav button:hover,
+.nav button.active {
+  color: var(--burgundy);
+}
+
+.layout {
+  max-width: 1240px;
+  margin: 42px auto;
+  padding: 0 25px;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr) 250px;
+  gap: 28px;
+  align-items: start;
+}
+
+.sidebar,
+.rightbar {
+  position: sticky;
+  top: 80px;
+}
+
+.panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 22px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+
+.panel-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.profile {
+  text-align: center;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--gold-light);
+  display: grid;
+  place-items: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  margin: 0 auto 14px;
+  border: 2px solid var(--gold);
+}
+
+.profile h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 23px;
+}
+
+.profile p {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 5px;
+  line-height: 1.6;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid var(--line);
+  margin-top: 18px;
+  padding-top: 15px;
+}
+
+.stat strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+}
+
+.stat span {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.category-list {
+  list-style: none;
+}
+
+.category-list button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: none;
+  background: none;
+  padding: 11px 0;
+  color: #625c55;
+  font-size: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+.category-list button:hover,
+.category-list button.selected {
+  color: var(--burgundy);
+  font-weight: 700;
+}
+
+.category-list span {
+  color: var(--gold);
+}
+
+.main {
+  min-width: 0;
+}
+
+.welcome {
+  background: var(--black);
+  color: var(--cream);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.welcome::after {
+  content: "GG";
+  position: absolute;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 180px;
+  color: rgba(255,255,255,.035);
+  right: -5px;
+  bottom: -65px;
+}
+
+.welcome .eyebrow {
+  color: var(--gold-light);
+}
+
+.welcome h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.05;
+  font-weight: 500;
+  max-width: 450px;
+}
+
+.welcome p {
+  color: #c4bdb2;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 14px;
+  max-width: 420px;
+}
+
+.welcome button {
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  padding: 12px 20px;
+  margin-top: 20px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.feed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 28px 0 17px;
+}
+
+.feed-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 29px;
+}
+
+.feed-header select {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 9px;
+  color: #625c55;
+  font-size: 11px;
+}
+
+.search {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 13px 16px;
+  margin-bottom: 17px;
+  outline: none;
+  font-size: 12px;
+}
+
+.search:focus,
+textarea:focus,
+input:focus {
+  border-color: var(--gold);
+}
+
+.post {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 24px;
+  margin-bottom: 17px;
+  box-shadow: var(--shadow);
+  animation: fadeIn .35s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.post-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 17px;
+}
+
+.post-author {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.mini-avatar {
+  width: 37px;
+  height: 37px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--gold-light);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+}
+
+.author-name {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.post-time {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.tag {
+  color: var(--burgundy);
+  background: #f4e9e9;
+  padding: 6px 9px;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.post h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+
+.post-content {
+  font-size: 13px;
+  line-height: 1.85;
+  color: #625c55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.post-actions {
+  display: flex;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  margin-top: 20px;
+  padding-top: 15px;
+}
+
+.post-actions button {
+  background: none;
+  border: none;
+  color: #827b72;
+  font-size: 11px;
+}
+
+.post-actions button:hover,
+.post-actions button.liked {
+  color: var(--burgundy);
+}
+
+.empty {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--muted);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+}
+
+.quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--burgundy);
+}
+
+.quote small {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-style: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 15px;
+}
+
+.trending-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.trending-item span {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.disclaimer {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px 15px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1px;
+  border-top: 1px solid var(--line);
+}
+
+.footer strong {
+  color: var(--burgundy);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+}
+
+/* Modal */
+
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0,0,0,.65);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-backdrop.show {
+  display: flex;
+}
+
+.modal {
+  background: var(--paper);
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: fadeIn .25s ease;
+}
+
+.modal-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-heading h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+}
+
+.close {
+  border: none;
+  background: none;
+  font-size: 25px;
+  color: var(--muted);
+}
+
+.form-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 17px 0 8px;
+  color: #625c55;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: white;
+  padding: 12px;
+  outline: none;
+  font-size: 12px;
+}
+
+.form-textarea {
+  min-height: 130px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.submit-btn {
+  background: var(--black);
+  color: var(--gold-light);
+  width: 100%;
+  padding: 14px;
+  border: none;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.form-note {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+  margin-top: 12px;
+}
+
+.toast {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translate(-50%, 100px);
+  background: var(--black);
+  color: var(--gold-light);
+  padding: 14px 22px;
+  font-size: 12px;
+  z-index: 200;
+  transition: transform .3s;
+  text-align: center;
+}
+
+.toast.show {
+  transform: translate(-50%, 0);
+}
+
+/* Dark mode */
+
+body.dark {
+  --cream: #171514;
+  --paper: #211e1c;
+  --black: #f8f5ef;
+  --dark: #f8f5ef;
+  --line: #39332f;
+  --muted: #aaa096;
+  --shadow: 0 12px 40px rgba(0,0,0,.15);
+}
+
+body.dark .topbar {
+  background: #0e0d0c;
+}
+
+body.dark .post-content,
+body.dark .category-list button,
+body.dark .nav button {
+  color: #c5bdb3;
+}
+
+body.dark .welcome {
+  background: #0e0d0c;
+}
+
+body.dark .form-input,
+body.dark .form-textarea,
+body.dark .form-select,
+body.dark .search {
+  background: #302b27;
+  color: #f8f5ef;
+}
+
+body.dark .tag {
+  background: #482a30;
+  color: #e5b8c0;
+}
+
+body.dark .quote {
+  color: #d6a3ad;
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .layout {
+    grid-template-columns: 190px minmax(0, 1fr);
+  }
+
+  .rightbar {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .topbar {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .masthead {
+    padding: 30px 12px 22px;
+  }
+
+  .logo {
+    letter-spacing: -2px;
+  }
+
+  .nav {
+    gap: 18px;
+    padding: 14px 8px;
+  }
+
+  .nav button {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .layout {
+    display: block;
+    margin: 20px auto;
+    padding: 0 13px;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .sidebar .profile {
+    display: none;
+  }
+
+  .sidebar .panel {
+    padding: 13px;
+    margin-bottom: 14px;
+  }
+
+  .category-list {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+  }
+
+  .category-list li {
+    flex-shrink: 0;
+  }
+
+  .category-list button {
+    border: 1px solid var(--line);
+    padding: 9px 12px;
+    font-size: 10px;
+  }
+
+  .section-label {
+    margin-bottom: 10px;
+  }
+
+  .welcome {
+    padding: 25px 20px;
+  }
+
+  .post {
+    padding: 19px;
+  }
+
+  .post h3 {
+    font-size: 23px;
+  }
+
+  .feed-header h2 {
+    font-size: 25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  Anonymity is a luxury. Secrets are a currency.
+</div>
+
+<header class="masthead">
+  <div class="eyebrow">The private society</div>
+  <h1 class="logo">GOSSIP <span>GIRL</span></h1>
+  <p class="tagline">You know you love me. XOXO.</p>
+</header>
+
+<nav class="nav">
+  <button class="active" onclick="showPage('home', this)">The Feed</button>
+  <button onclick="showPage('about', this)">The Society</button>
+  <button onclick="openModal()">Submit a Secret</button>
+  <button onclick="toggleTheme()" id="themeButton">☾</button>
+</nav>
+
+<div class="layout">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="panel profile">
+      <div class="avatar">G</div>
+      <h3>The Inner Circle</h3>
+      <p>Private society · Est. 2007</p>
+
+      <div class="stat-row">
+        <div class="stat">
+          <strong id="postCount">0</strong>
+          <span>Blasts</span>
+        </div>
+        <div class="stat">
+          <strong>∞</strong>
+          <span>Secrets</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="section-label">The categories</div>
+      <ul class="category-list">
+        <li><button class="selected" onclick="filterCategory('All', this)">All Posts <span>✦</span></button></li>
+        <li><button onclick="filterCategory('Campus', this)">Campus <span>01</span></button></li>
+        <li><button onclick="filterCategory('Friendship', this)">Friendship <span>02</span></button></li>
+        <li><button onclick="filterCategory('Confessions', this)">Confessions <span>03</span></button></li>
+        <li><button onclick="filterCategory('Just for Fun', this)">Just for Fun <span>04</span></button></li>
+      </ul>
+    </div>
+
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main" id="mainContent">
+
+    <section class="welcome">
+      <div class="eyebrow">Monday, with love</div>
+      <h2>Welcome back to the society.</h2>
+      <p>
+        Spotted: another day, another story waiting to unfold.
+        Your favorite source of harmless drama is officially back.
+      </p>
+      <button onclick="openModal()">Spill the tea →</button>
+    </section>
+
+    <div class="feed-header">
+      <h2>Latest Blasts</h2>
+      <select id="sortSelect" onchange="renderPosts()">
+        <option value="newest">Newest first</option>
+        <option value="popular">Most loved</option>
+      </select>
+    </div>
+
+    <input
+      class="search"
+      id="searchInput"
+      type="search"
+      placeholder="Search the society..."
+      oninput="renderPosts()"
+    >
+
+    <div id="feed"></div>
+
+  </main>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="rightbar">
+
+    <div class="panel">
+      <div class="section-label">A little reminder</div>
+      <p class="quote">
+        "The only thing better than a secret is a secret worth keeping."
+        <small>— Gossip Girl</small>
+      </p>
+    </div>
+
+    <div class="panel">
+      <div class="section-label">Society notes</div>
+
+      <div class="trending-item">
+        <strong>01. Keep it classy.</strong>
+        <span>Drama is optional. Kindness is not.</span>
+      </div>
+
+      <div class="trending-item">
+        <strong>02. Stay mysterious.</strong>
+        <span>Your identity is yours to share.</span>
+      </div>
+
+      <div class="trending-item">
+        <strong>03. Make it memorable.</strong>
+        <span>Every story deserves a little sparkle.</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="section-label">A word from GG</div>
+      <p class="disclaimer">
+        This is a private, local demo. Posts are stored in this browser only.
+        Keep submissions fictional or lighthearted. Don't post private information,
+        accusations, or content intended to embarrass someone.
+      </p>
+    </div>
+
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <strong>XOXO, Gossip Girl.</strong>
+  <p style="margin-top:8px">You know you love me.</p>
+</footer>
+
+<!-- SUBMISSION MODAL -->
+<div class="modal-backdrop" id="modalBackdrop" onclick="backdropClose(event)">
+  <div class="modal">
+
+    <div class="modal-heading">
+      <h2>Spill the tea.</h2>
+      <button class="close" onclick="closeModal()">×</button>
+    </div>
+
+    <form id="postForm">
+
+      <label class="form-label" for="postTitle">Your headline</label>
+      <input
+        class="form-input"
+        id="postTitle"
+        maxlength="90"
+        placeholder="Something worth talking about..."
+        required
+      >
+
+      <label class="form-label" for="postCategory">Choose your category</label>
+      <select class="form-select" id="postCategory">
+        <option>Campus</option>
+        <option>Friendship</option>
+        <option>Confessions</option>
+        <option>Just for Fun</option>
+      </select>
+
+      <label class="form-label" for="postBody">The story</label>
+      <textarea
+        class="form-textarea"
+        id="postBody"
+        maxlength="1000"
+        placeholder="Once upon a time in the society..."
+        required
+      ></textarea>
+
+      <p class="form-note">
+        Keep it fun, fictional, and respectful. Submissions appear only in this
+        browser. Avoid identifying details or personal secrets.
+      </p>
+
+      <button class="submit-btn" type="submit">Send to the society ✦</button>
+
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const starterPosts = [
+  {
+    id: 1,
+    author: "Gossip Girl",
+    initial: "G",
+    title: "A little birdie told me...",
+    body: "The best stories don't always happen in the spotlight. Sometimes, the funniest moments are the ones shared between friends when nobody is watching. Keep your eyes open, darlings.",
+    category: "Just for Fun",
+    time: Date.now() - 1000 * 60 * 12,
+    likes: 24,
+    liked: false
+  },
+  {
+    id: 2,
+    author: "An Anonymous Socialite",
+    initial: "A",
+    title: "The art of the unexpected",
+    body: "Reminder to romanticize your ordinary days. Dress up for no reason, take the long way home, and make memories that you'll laugh about years from now.",
+    category: "Confessions",
+    time: Date.now() - 1000 * 60 * 60 * 2,
+    likes: 18,
+    liked: false
+  },
+  {
+    id: 3,
+    author: "The Upper East Sider",
+    initial: "U",
+    title: "Spotted: main character energy",
+    body: "Someone walked into the room today with the confidence of someone who knows exactly who they are. We love to see it. XOXO.",
+    category: "Campus",
+    time: Date.now() - 1000 * 60 * 60 * 5,
+    likes: 32,
+    liked: false
+  },
+  {
+    id: 4,
+    author: "Your Favorite Insider",
+    initial: "I",
+    title: "Friendship is the real plot twist",
+    body: "The best people are the ones who make a regular Tuesday feel like a scene from your favorite movie. Tag your inner circle in your heart.",
+    category: "Friendship",
+    time: Date.now() - 1000 * 60 * 60 * 24,
+    likes: 41,
+    liked: false
+  }
+];
+
+let posts = JSON.parse(localStorage.getItem("ggPosts") || "null") || starterPosts;
+let currentCategory = "All";
+
+function savePosts() {
+  localStorage.setItem("ggPosts", JSON.stringify(posts));
+}
+
+function timeAgo(timestamp) {
+  const seconds = Math.floor((Date.now() - timestamp) / 1000);
+
+  if (seconds < 60) return "Just now";
+  if (seconds < 3600) return Math.floor(seconds / 60) + "m ago";
+  if (seconds < 86400) return Math.floor(seconds / 3600) + "h ago";
+  return Math.floor(seconds / 86400) + "d ago";
+}
+
+function escapeHTML(text) {
+  return String(text).replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;"
+  })[char]);
+}
+
+function renderPosts() {
+  const feed = document.getElementById("feed");
+  const query = document.getElementById("searchInput").value.toLowerCase();
+  const sort = document.getElementById("sortSelect").value;
+
+  let filtered = posts.filter(post => {
+    const matchesCategory =
+      currentCategory === "All" || post.category === currentCategory;
+
+    const matchesSearch =
+      post.title.toLowerCase().includes(query) ||
+      post.body.toLowerCase().includes(query) ||
+      post.category.toLowerCase().includes(query);
+
+    return matchesCategory && matchesSearch;
+  });
+
+  if (sort === "popular") {
+    filtered.sort((a, b) => b.likes - a.likes);
+  } else {
+    filtered.sort((a, b) => b.time - a.time);
+  }
+
+  document.getElementById("postCount").textContent = posts.length;
+
+  if (!filtered.length) {
+    feed.innerHTML = '<div class="panel empty">No stories found, darling. ✦</div>';
+    return;
+  }
+
+  feed.innerHTML = filtered.map(post => `
+    <article class="post">
+      <div class="post-top">
+        <div class="post-author">
+          <div class="mini-avatar">${escapeHTML(post.initial)}</div>
+          <div>
+            <div class="author-name">${escapeHTML(post.author)}</div>
+            <div class="post-time">${timeAgo(post.time)}</div>
+          </div>
+        </div>
+        <span class="tag">${escapeHTML(post.category)}</span>
+      </div>
+
+      <h3>${escapeHTML(post.title)}</h3>
+      <p class="post-content">${escapeHTML(post.body)}</p>
+
+      <div class="post-actions">
+        <button
+          class="${post.liked ? "liked" : ""}"
+          onclick="toggleLike(${post.id})"
+        >
+          ${post.liked ? "♥" : "♡"} ${post.likes} appreciations
+        </button>
+
+        <button onclick="sharePost(${post.id})">↗ Share</button>
+      </div>
+    </article>
+  `).join("");
+}
+
+function toggleLike(id) {
+  const post = posts.find(p => p.id === id);
+  if (!post) return;
+
+  post.liked = !post.liked;
+  post.likes += post.liked ? 1 : -1;
+
+  savePosts();
+  renderPosts();
+}
+
+function filterCategory(category, button) {
+  currentCategory = category;
+
+  document.querySelectorAll(".category-list button").forEach(btn => {
+    btn.classList.remove("selected");
+  });
+
+  button.classList.add("selected");
+  renderPosts();
+}
+
+function openModal() {
+  document.getElementById("modalBackdrop").classList.add("show");
+}
+
+function closeModal() {
+  document.getElementById("modalBackdrop").classList.remove("show");
+}
+
+function backdropClose(event) {
+  if (event.target.id === "modalBackdrop") closeModal();
+}
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  setTimeout(() => toast.classList.remove("show"), 2500);
+}
+
+document.getElementById("postForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const title = document.getElementById("postTitle").value.trim();
+  const body = document.getElementById("postBody").value.trim();
+  const category = document.getElementById("postCategory").value;
+
+  if (!title || !body) return;
+
+  const newPost = {
+    id: Date.now(),
+    author: "An Anonymous Socialite",
+    initial: "A",
+    title,
+    body,
+    category,
+    time: Date.now(),
+    likes: 0,
+    liked: false
+  };
+
+  posts.unshift(newPost);
+  savePosts();
+
+  this.reset();
+  closeModal();
+
+  currentCategory = "All";
+  document.querySelectorAll(".category-list button").forEach(btn => {
+    btn.classList.remove("selected");
+  });
+  document.querySelector(".category-list button").classList.add("selected");
+
+  renderPosts();
+  showToast("Your story has entered the society. XOXO.");
+});
+
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+  const isDark = document.body.classList.contains("dark");
+
+  document.getElementById("themeButton").textContent = isDark ? "☀" : "☾";
+  localStorage.setItem("ggDarkMode", isDark);
+}
+
+function sharePost(id) {
+  const post = posts.find(p => p.id === id);
+  if (!post) return;
+
+  const text = `${post.title}\n\n${post.body}\n\n— XOXO, Gossip Girl`;
+
+  if (navigator.share) {
+    navigator.share({ title: post.title, text }).catch(() => {});
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(text)
+      .then(() => showToast("Story copied to clipboard."));
+  } else {
+    showToast("Sharing is not available in this browser.");
+  }
+}
+
+function showPage(page, button) {
+  document.querySelectorAll(".nav button").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  if (button) button.classList.add("active");
+
+  const main = document.getElementById("mainContent");
+
+  if (page === "about") {
+    main.innerHTML = `
+      <section class="welcome">
+        <div class="eyebrow">The society</div>
+        <h2>Every circle has a story.</h2>
+        <p>Welcome to your own little corner of the Upper East Side.
+        A place for playful updates, inside jokes, and stories worth remembering.</p>
+      </section>
+
+      <div class="panel">
+        <h2 class="panel-title">The rules of the inner circle</h2>
+        <p class="post-content">
+          01. Be mysterious, but never malicious.
+
+          02. Keep personal information private.
+
+          03. Celebrate your friends. Don't humiliate them.
+
+          04. Fictional stories and harmless inside jokes are always welcome.
+
+          05. Remember that kindness never goes out of style.
+        </p>
+      </div>
+
+      <div class="panel">
+        <h2 class="panel-title">A note from Gossip Girl</h2>
+        <p class="quote">"You can never have too many friends, or too many stories to tell."</p>
+      </div>
+
+      <button class="submit-btn" onclick="showPage('home', document.querySelector('.nav button'))">
+        Back to the feed
+      </button>
+    `;
+  } else {
+    main.innerHTML = `
+      <section class="welcome">
+        <div class="eyebrow">The private society</div>
+        <h2>Welcome back to the society.</h2>
+        <p>Spotted: another day, another story waiting to unfold.</p>
+        <button onclick="openModal()">Spill the tea →</button>
+      </section>
+      <div class="feed-header"><h2>Latest Blasts</h2></div>
+      <input class="search" id="searchInput" type="search"
+        placeholder="Search the society..." oninput="renderPosts()">
+      <div id="feed"></div>
+    `;
+
+    renderPosts();
+  }
+}
+
+// Restore saved theme
+if (localStorage.getItem("ggDarkMode") === "true") {
+  document.body.classList.add("dark");
+  document.getElementById("themeButton").textContent = "☀";
+}
+
+renderPosts();
+</script>
+
+</body>
+</html>
