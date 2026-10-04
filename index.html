@@ -35,21 +35,14 @@
 
 <body>
 
-
-    <!-- DARK BACKGROUND OVERLAY -->
-
     <div class="overlay"></div>
 
-
-    <!-- =========================
-         MAIN PAGE
-    ========================== -->
 
     <main class="page">
 
 
         <!-- =========================
-             GOSSIP GIRL TITLE
+             TITLE
         ========================== -->
 
         <header>
@@ -63,7 +56,7 @@
 
 
         <!-- =========================
-             MAIN 3-COLUMN WEBSITE
+             MAIN 3 COLUMN LAYOUT
         ========================== -->
 
         <section class="website">
@@ -91,7 +84,6 @@
                 </div>
 
 
-
                 <div class="nav-section">
 
                     <h2 class="pink">
@@ -104,7 +96,6 @@
                     </p>
 
                 </div>
-
 
 
                 <div class="nav-section">
@@ -121,7 +112,6 @@
                 </div>
 
 
-
                 <div class="nav-section">
 
                     <h2 class="purple">
@@ -134,7 +124,6 @@
                     </p>
 
                 </div>
-
 
 
                 <div class="nav-section">
@@ -156,22 +145,83 @@
 
 
             <!-- =====================
-                 CENTER GOSSIP FEED
+                 CENTER NEWS
             ====================== -->
 
             <section class="content">
 
 
-                <!-- NEWS FEED
-                     CARDS WILL STACK
-                     VERTICALLY HERE -->
-
                 <div class="news-feed">
 
 
-                    <!-- =====================
-                         GOSSIP CARD 1
-                    ====================== -->
+                    <!-- =================================================
+                         CARD 1 — YOUR PHOTO
+                         THIS IS NOW FIRST
+                    ================================================== -->
+
+                    <article class="gossip-card">
+
+
+                        <div class="card-header">
+
+                            Spotted: The Depokers girls take over Manhattan!
+
+                        </div>
+
+
+                        <img
+                            src="newyorker.jpeg"
+                            alt="The Depokers girls in Manhattan"
+                            class="main-image"
+                        >
+
+
+                        <div class="story">
+
+
+                            <p>
+
+                                Gossip Girl here. Looks like the girls
+                                have officially traded DEPOK for Central Park.
+
+                            </p>
+
+
+                            <p class="small">
+
+                                Six besties, one perfect Manhattan afternoon,
+                                and enough secrets to keep me busy all week.
+
+                            </p>
+
+
+                            <div class="story-footer">
+
+                                <span>
+                                    12/04/2026
+                                </span>
+
+                                <span>
+                                    Gossip Girl
+                                </span>
+
+                                <button onclick="readMore()">
+                                    read more →
+                                </button>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </article>
+
+
+
+                    <!-- =================================================
+                         CARD 2 — SERENA
+                    ================================================== -->
 
                     <article class="gossip-card">
 
@@ -184,13 +234,11 @@
                         </div>
 
 
-
                         <img
                             src="serena.jpeg"
                             alt="Serena van der Woodsen"
                             class="main-image"
                         >
-
 
 
                         <div class="story">
@@ -205,7 +253,6 @@
                             </p>
 
 
-
                             <p class="small">
 
                                 OMG!!! Girl is back, y'all.
@@ -216,106 +263,19 @@
                             </p>
 
 
-
                             <div class="story-footer">
-
 
                                 <span>
                                     11/04/2025
                                 </span>
 
-
                                 <span>
                                     Gossip Girl
                                 </span>
 
-
-                                <button
-                                    onclick="readMore()"
-                                >
-
+                                <button onclick="readMore()">
                                     read more →
-
                                 </button>
-
-
-                            </div>
-
-
-                        </div>
-
-
-                    </article>
-
-
-
-                    <!-- =====================
-                         GOSSIP CARD 2
-                    ====================== -->
-
-                    <article class="gossip-card">
-
-
-                        <div class="card-header">
-
-                            Spotted:
-                            The Depokers girls take over Manhattan!
-
-                        </div>
-
-
-
-                        <img
-                            src="newyorker.jpeg"
-                            alt="The Depokers girls in Manhattan"
-                            class="main-image"
-                        >
-
-
-
-                        <div class="story">
-
-
-                            <p>
-
-                                Gossip Girl here. Looks like the girls
-                                have officially traded DEPOK for Central Park.
-
-                            </p>
-
-
-
-                            <p class="small">
-
-                                Six besties,
-                                one perfect Manhattan afternoon,
-                                and enough secrets to keep me busy all week.
-
-                            </p>
-
-
-
-                            <div class="story-footer">
-
-
-                                <span>
-                                    12/04/2026
-                                </span>
-
-
-                                <span>
-                                    Gossip Girl
-                                </span>
-
-
-                                <button
-                                    onclick="readMore()"
-                                >
-
-                                    read more →
-
-                                </button>
-
 
                             </div>
 
@@ -334,13 +294,11 @@
 
 
             <!-- =====================
-                 RIGHT CHARACTER MENU
+                 RIGHT CHARACTERS
             ====================== -->
 
             <aside class="characters">
 
-
-                <!-- SERENA -->
 
                 <button
                     class="character"
@@ -359,9 +317,6 @@
                 </button>
 
 
-
-                <!-- BLAIR -->
-
                 <button
                     class="character"
                     onclick="showCharacter('Blair')"
@@ -379,9 +334,6 @@
                 </button>
 
 
-
-                <!-- CHUCK -->
-
                 <button
                     class="character"
                     onclick="showCharacter('Chuck')"
@@ -398,9 +350,6 @@
 
                 </button>
 
-
-
-                <!-- NATE -->
 
                 <button
                     class="character"
@@ -438,11 +387,10 @@
 
 
         <!-- =========================
-             SUBMIT GOSSIP BUTTON
+             SUBMIT BUTTON
         ========================== -->
 
         <div class="submit-area">
-
 
             <button
                 class="submit-button"
@@ -453,20 +401,18 @@
 
             </button>
 
-
         </div>
 
 
 
         <!-- =========================
-             SUBMIT GOSSIP POPUP
+             SUBMIT POPUP
         ========================== -->
 
         <div
             class="modal"
             id="gossipModal"
         >
-
 
             <div class="modal-box">
 
@@ -481,11 +427,9 @@
                 </button>
 
 
-
                 <h2>
                     submit gossip
                 </h2>
-
 
 
                 <p class="modal-subtitle">
@@ -496,11 +440,8 @@
                 </p>
 
 
-
                 <label for="gossipName">
-
                     your name
-
                 </label>
 
 
@@ -511,11 +452,8 @@
                 >
 
 
-
                 <label for="gossipText">
-
                     your gossip
-
                 </label>
 
 
@@ -523,7 +461,6 @@
                     id="gossipText"
                     placeholder="Spill the tea..."
                 ></textarea>
-
 
 
                 <button
@@ -537,7 +474,6 @@
 
 
             </div>
-
 
         </div>
 
@@ -557,11 +493,7 @@
     </main>
 
 
-
-    <!-- JAVASCRIPT -->
-
     <script src="script.js"></script>
-
 
 </body>
 

@@ -40,7 +40,7 @@ function readMore() {
 
 
 /* =====================================================
-   OPEN SUBMIT FORM
+   OPEN GOSSIP FORM
 ===================================================== */
 
 function openGossipForm() {
@@ -53,7 +53,7 @@ function openGossipForm() {
 
 
 /* =====================================================
-   CLOSE SUBMIT FORM
+   CLOSE GOSSIP FORM
 ===================================================== */
 
 function closeGossipForm() {
@@ -152,7 +152,7 @@ function submitGossip() {
 
 
 /* =====================================================
-   DISPLAY USER GOSSIP
+   DISPLAY COMMUNITY GOSSIP
 ===================================================== */
 
 function displayGossip() {
