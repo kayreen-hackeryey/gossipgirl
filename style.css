@@ -1,3 +1,12 @@
+/* =========================================================
+   GOSSIP GIRL — MAIN STYLESHEET
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,9 +14,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    BODY
-========================= */
+========================================================= */
 
 body {
     min-height: 100vh;
@@ -17,18 +26,17 @@ body {
     color: white;
 
     background-image: url("newyork.jpg");
-
     background-size: cover;
-
     background-position: center;
-
     background-attachment: fixed;
 
     overflow-x: hidden;
 }
 
 
-/* DARK OVERLAY */
+/* =========================================================
+   DARK BACKGROUND
+========================================================= */
 
 .overlay {
     position: fixed;
@@ -38,42 +46,47 @@ body {
     background:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.82),
-            rgba(0, 0, 0, 0.40),
-            rgba(0, 0, 0, 0.78)
+            rgba(0, 0, 0, 0.88),
+            rgba(0, 0, 0, 0.48),
+            rgba(0, 0, 0, 0.86)
         );
 
     z-index: 0;
+
+    pointer-events: none;
 }
 
 
-/* =========================
+/* =========================================================
    MAIN PAGE
-========================= */
+========================================================= */
 
 .page {
     position: relative;
 
     z-index: 1;
 
+    width: 100%;
     max-width: 1200px;
 
     min-height: 100vh;
 
-    margin: auto;
+    margin: 0 auto;
 
-    padding: 35px 50px 25px;
+    padding: 30px 45px 30px;
 }
 
 
-/* =========================
-   LOGO
-========================= */
+/* =========================================================
+   GOSSIP GIRL TITLE
+========================================================= */
 
 header {
+    width: 100%;
+
     text-align: center;
 
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 
@@ -86,66 +99,72 @@ header h1 {
 
     letter-spacing: -8px;
 
-    line-height: 0.8;
+    line-height: 0.85;
 
     color: #f1f3ad;
 
     text-shadow:
-        0 0 15px rgba(240, 243, 176, 0.15);
+        0 0 18px rgba(240, 243, 176, 0.15);
 }
 
 
-/* =========================
-   MAIN GRID
-========================= */
+/* =========================================================
+   MAIN 3-COLUMN LAYOUT
+========================================================= */
 
 .website {
     display: grid;
 
     grid-template-columns:
         190px
-        minmax(350px, 1fr)
+        minmax(360px, 1fr)
         120px;
 
-    gap: 55px;
+    gap: 45px;
 
     align-items: center;
 
-    min-height: 650px;
+    width: 100%;
+
+    min-height: 590px;
 }
 
 
-/* =========================
-   LEFT MENU
-========================= */
+/* =========================================================
+   LEFT SIDEBAR
+========================================================= */
 
 .sidebar {
-    align-self: center;
+    width: 100%;
 }
 
 
 .nav-section {
-    margin-bottom: 22px;
+    margin-bottom: 24px;
 }
 
 
 .nav-section h2 {
+    margin-bottom: 3px;
+
+    font-family: "Montserrat", sans-serif;
+
     font-size: 27px;
 
     font-weight: 400;
 
-    margin-bottom: 3px;
+    line-height: 1;
 }
 
 
 .nav-section p {
-    max-width: 170px;
+    max-width: 175px;
 
-    font-size: 11px;
+    color: rgba(255, 255, 255, 0.88);
 
-    line-height: 1.45;
+    font-size: 10px;
 
-    color: rgba(255,255,255,0.88);
+    line-height: 1.5;
 }
 
 
@@ -172,19 +191,27 @@ header h1 {
 }
 
 
-/* =========================
-   CENTER CARD
-========================= */
+/* =========================================================
+   CENTER CONTENT
+========================================================= */
 
 .content {
+    width: 100%;
+
     display: flex;
 
     justify-content: center;
+
+    align-items: center;
 }
 
 
+/* =========================================================
+   MAIN GOSSIP CARD
+========================================================= */
+
 .gossip-card {
-    width: min(100%, 450px);
+    width: min(100%, 430px);
 
     background: #f3f1df;
 
@@ -192,80 +219,90 @@ header h1 {
 
     padding: 10px;
 
-    border-radius: 8px;
+    border-radius: 7px;
 
     box-shadow:
-        0 20px 60px rgba(0,0,0,0.55);
+        0 20px 55px rgba(0, 0, 0, 0.55);
 
-    animation: appear 0.8s ease;
+    animation: cardAppear 0.7s ease;
 }
 
+
+/* CARD TITLE */
 
 .card-header {
-    padding: 9px 10px;
+    padding: 8px 10px 10px;
 
-    font-size: 15px;
+    font-size: 14px;
 
     font-weight: 600;
+
+    line-height: 1.25;
 }
 
 
-/* MAIN SERENA IMAGE */
+/* MAIN IMAGE */
 
 .main-image {
     display: block;
 
     width: 100%;
 
-    height: 330px;
+    height: 320px;
 
     object-fit: cover;
+
+    object-position: center;
 
     border-radius: 3px;
 }
 
 
+/* =========================================================
+   STORY TEXT
+========================================================= */
+
 .story {
-    padding: 14px 10px 7px;
+    padding: 14px 10px 8px;
 }
 
 
 .story p {
+    margin-bottom: 10px;
+
     font-family: "Playfair Display", serif;
 
     font-size: 16px;
 
-    line-height: 1.5;
-
-    margin-bottom: 10px;
+    line-height: 1.45;
 }
 
 
 .story .small {
     font-family: "Montserrat", sans-serif;
 
-    font-size: 12px;
+    font-size: 11px;
 
-    line-height: 1.5;
+    line-height: 1.55;
 }
 
 
-/* =========================
-   CARD FOOTER
-========================= */
+/* =========================================================
+   STORY FOOTER
+========================================================= */
 
 .story-footer {
     display: flex;
 
     align-items: center;
 
-    gap: 12px;
+    gap: 10px;
 
-    margin-top: 15px;
-
-    font-size: 9px;
+    margin-top: 14px;
 
     color: #777;
+
+    font-size: 8px;
 }
 
 
@@ -278,9 +315,9 @@ header h1 {
 
     color: #279ed0;
 
-    font-family: inherit;
+    font-family: "Montserrat", sans-serif;
 
-    font-size: 11px;
+    font-size: 10px;
 
     cursor: pointer;
 }
@@ -291,9 +328,9 @@ header h1 {
 }
 
 
-/* =========================
-   RIGHT CHARACTERS
-========================= */
+/* =========================================================
+   RIGHT CHARACTER MENU
+========================================================= */
 
 .characters {
     display: flex;
@@ -302,11 +339,21 @@ header h1 {
 
     align-items: center;
 
-    gap: 18px;
+    justify-content: center;
+
+    gap: 17px;
+
+    width: 100%;
 }
 
 
 .character {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
     border: none;
 
     background: transparent;
@@ -315,8 +362,6 @@ header h1 {
 
     cursor: pointer;
 
-    text-align: center;
-
     transition:
         transform 0.25s ease,
         opacity 0.25s ease;
@@ -324,7 +369,7 @@ header h1 {
 
 
 .character:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
 
     opacity: 0.9;
 }
@@ -333,9 +378,9 @@ header h1 {
 .character img {
     display: block;
 
-    width: 66px;
+    width: 62px;
 
-    height: 66px;
+    height: 62px;
 
     object-fit: cover;
 
@@ -346,178 +391,131 @@ header h1 {
     margin-bottom: 5px;
 
     box-shadow:
-        0 0 10px rgba(235,240,160,0.3);
+        0 0 12px rgba(235, 240, 160, 0.3);
 }
 
 
 .character span {
-    display: block;
-
-    font-family: "Playfair Display", serif;
-
-    font-size: 14px;
-
-    color: #f0f3b0;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    text-align: center;
-
-    margin-top: 15px;
-
     font-family: "Playfair Display", serif;
 
     font-size: 13px;
 
     color: #f0f3b0;
-
-    opacity: 0.8;
 }
 
 
-/* =========================
-   ANIMATION
-========================= */
+/* =========================================================
+   COMMUNITY GOSSIP
+========================================================= */
 
-@keyframes appear {
+.community-gossip {
+    display: none;
 
-    from {
-        opacity: 0;
+    width: min(100%, 500px);
 
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform: translateY(0);
-    }
+    margin: 20px auto 0;
 }
 
 
-/* =========================
-   TABLET
-========================= */
+.community-gossip.has-gossip {
+    display: flex;
 
-@media (max-width: 850px) {
+    flex-direction: column;
 
-    .page {
-        padding: 25px;
-    }
-
-
-    header h1 {
-        font-size: 70px;
-
-        letter-spacing: -5px;
-    }
-
-
-    .website {
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-    }
-
-
-    .sidebar {
-        display: grid;
-
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 15px;
-    }
-
-
-    .nav-section {
-        margin-bottom: 0;
-    }
-
-
-    .characters {
-        flex-direction: row;
-
-        justify-content: center;
-    }
-
+    gap: 10px;
 }
 
 
-/* =========================
-   PHONE
-========================= */
+/* =========================================================
+   USER GOSSIP CARD
+========================================================= */
 
-@media (max-width: 500px) {
+.user-gossip {
+    width: 100%;
 
-    .page {
-        padding: 20px 15px;
-    }
+    padding: 15px 18px;
 
+    background: rgba(243, 241, 223, 0.97);
 
-    header h1 {
-        font-size: 50px;
+    color: #111;
 
-        letter-spacing: -4px;
-    }
+    border-left: 4px solid #e66f87;
 
+    border-radius: 4px;
 
-    .sidebar {
-        grid-template-columns: 1fr 1fr;
-    }
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.4);
 
-
-    .nav-section h2 {
-        font-size: 21px;
-    }
+    animation: gossipAppear 0.5s ease;
+}
 
 
-    .nav-section p {
-        font-size: 10px;
-    }
+/* WHO POSTED */
+
+.user-gossip .gossip-user {
+    margin-bottom: 6px;
+
+    color: #e66f87;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
 
 
-    .main-image {
-        height: 240px;
-    }
+/* GOSSIP TEXT */
+
+.user-gossip .gossip-message {
+    font-family: "Playfair Display", serif;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: #111;
+}
 
 
-    .gossip-card {
-        width: 100%;
-    }
-/* =========================
-   SUBMIT GOSSIP
-========================= */
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
 
 .submit-area {
-    text-align: center;
+    display: flex;
 
-    margin-top: 10px;
+    justify-content: center;
+
+    width: 100%;
+
+    margin-top: 22px;
 }
 
 
 .submit-button {
-    background: transparent;
+    padding: 10px 22px;
 
     border: 1px solid #f0f3b0;
 
-    color: #f0f3b0;
+    background: transparent;
 
-    padding: 10px 22px;
+    color: #f0f3b0;
 
     font-family: "Montserrat", sans-serif;
 
-    font-size: 11px;
+    font-size: 10px;
 
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
 
@@ -530,9 +528,9 @@ footer {
 }
 
 
-/* =========================
-   MODAL
-========================= */
+/* =========================================================
+   POPUP / MODAL
+========================================================= */
 
 .modal {
     display: none;
@@ -547,11 +545,11 @@ footer {
 
     justify-content: center;
 
-    background: rgba(0,0,0,0.75);
-
-    backdrop-filter: blur(8px);
-
     padding: 20px;
+
+    background: rgba(0, 0, 0, 0.78);
+
+    backdrop-filter: blur(7px);
 }
 
 
@@ -560,66 +558,72 @@ footer {
 }
 
 
-/* MODAL BOX */
+/* =========================================================
+   POPUP BOX
+========================================================= */
 
 .modal-box {
     position: relative;
 
-    width: min(100%, 450px);
+    width: min(100%, 440px);
+
+    padding: 30px;
 
     background: #f3f1df;
 
     color: #111;
 
-    padding: 30px;
-
-    border-radius: 8px;
+    border-radius: 7px;
 
     box-shadow:
-        0 25px 80px rgba(0,0,0,0.6);
+        0 25px 80px rgba(0, 0, 0, 0.65);
 
     animation: modalAppear 0.3s ease;
 }
 
 
+/* POPUP TITLE */
+
 .modal-box h2 {
+    margin-bottom: 5px;
+
     font-family: "Playfair Display", serif;
 
     font-size: 32px;
 
     font-weight: 400;
-
-    color: #222;
-
-    margin-bottom: 5px;
 }
 
 
 .modal-subtitle {
-    font-size: 11px;
+    margin-bottom: 20px;
 
     color: #777;
 
-    margin-bottom: 22px;
+    font-size: 11px;
+
+    line-height: 1.5;
 }
 
 
-/* CLOSE */
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
 
 .close-button {
     position: absolute;
 
-    top: 12px;
+    top: 10px;
 
-    right: 16px;
+    right: 15px;
 
     border: none;
 
     background: transparent;
 
-    font-size: 28px;
-
     color: #555;
+
+    font-size: 27px;
 
     cursor: pointer;
 }
@@ -630,45 +634,60 @@ footer {
 }
 
 
-/* LABELS */
+/* =========================================================
+   FORM LABELS
+========================================================= */
 
 .modal-box label {
     display: block;
 
-    margin-bottom: 6px;
-
     margin-top: 15px;
 
-    font-size: 10px;
+    margin-bottom: 6px;
+
+    color: #777;
+
+    font-size: 9px;
+
+    font-weight: 600;
 
     text-transform: uppercase;
 
     letter-spacing: 1px;
-
-    color: #777;
 }
 
 
-/* INPUTS */
+/* =========================================================
+   FORM INPUTS
+========================================================= */
 
 .modal-box input,
 .modal-box textarea {
-
     width: 100%;
+
+    padding: 11px;
 
     border: 1px solid #ccc;
 
-    background: #fff;
+    border-radius: 3px;
 
-    padding: 11px;
+    outline: none;
+
+    background: white;
+
+    color: #111;
 
     font-family: "Montserrat", sans-serif;
 
     font-size: 12px;
 
-    outline: none;
+    transition: border 0.2s ease;
+}
 
-    border-radius: 3px;
+
+.modal-box input:focus,
+.modal-box textarea:focus {
+    border-color: #999;
 }
 
 
@@ -679,16 +698,11 @@ footer {
 }
 
 
-.modal-box input:focus,
-.modal-box textarea:focus {
-    border-color: #999;
-}
-
-
-/* POST BUTTON */
+/* =========================================================
+   POST BUTTON
+========================================================= */
 
 .post-button {
-
     width: 100%;
 
     margin-top: 20px;
@@ -703,13 +717,15 @@ footer {
 
     font-family: "Montserrat", sans-serif;
 
-    font-size: 11px;
+    font-size: 10px;
+
+    font-weight: 500;
 
     letter-spacing: 1.5px;
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition: background 0.25s ease;
 }
 
 
@@ -718,82 +734,71 @@ footer {
 }
 
 
-/* =========================
-   COMMUNITY GOSSIP CARD
-========================= */
+/* =========================================================
+   FOOTER
+========================================================= */
 
-.community-gossip {
-    display: none;
-}
+footer {
+    width: 100%;
 
+    margin-top: 25px;
 
-/* When gossip exists */
+    text-align: center;
 
-.community-gossip.has-gossip {
-    display: block;
+    color: #f0f3b0;
 
-    position: fixed;
-
-    bottom: 25px;
-
-    left: 25px;
-
-    width: 270px;
-
-    z-index: 20;
-}
-
-
-.user-gossip {
-    background: #f3f1df;
-
-    color: #111;
-
-    padding: 15px;
-
-    margin-top: 10px;
-
-    border-left: 4px solid #e66f87;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.4);
-
-    animation: appear 0.5s ease;
-}
-
-
-.user-gossip .gossip-user {
-    font-size: 10px;
-
-    color: #e66f87;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 7px;
-}
-
-
-.user-gossip .gossip-message {
     font-family: "Playfair Display", serif;
 
-    font-size: 14px;
+    font-size: 13px;
 
-    line-height: 1.5;
+    opacity: 0.85;
 }
 
 
-/* =========================
-   MODAL ANIMATION
-========================= */
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes gossipAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
 
 @keyframes modalAppear {
 
     from {
         opacity: 0;
 
-        transform: scale(0.9);
+        transform: scale(0.92);
     }
 
     to {
@@ -805,17 +810,215 @@ footer {
 }
 
 
-/* PHONE */
+/* =========================================================
+   TABLET
+========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
 
-    .community-gossip.has-gossip {
-        position: static;
+    .page {
+        padding: 25px 30px;
+    }
 
-        width: 100%;
 
-        margin-top: 20px;
+    .website {
+        grid-template-columns:
+            160px
+            minmax(300px, 1fr)
+            90px;
+
+        gap: 30px;
+    }
+
+
+    header h1 {
+        font-size: 80px;
+
+        letter-spacing: -5px;
+    }
+
+
+    .nav-section h2 {
+        font-size: 23px;
+    }
+
+
+    .nav-section p {
+        font-size: 9px;
+    }
+
+
+    .main-image {
+        height: 280px;
+    }
+
+
+    .character img {
+        width: 55px;
+
+        height: 55px;
     }
 
 }
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    body {
+        background-attachment: scroll;
+    }
+
+
+    .page {
+        padding: 25px 20px;
+    }
+
+
+    header {
+        margin-bottom: 35px;
+    }
+
+
+    header h1 {
+        font-size: 55px;
+
+        letter-spacing: -4px;
+    }
+
+
+    .website {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 30px;
+
+        min-height: auto;
+    }
+
+
+    /* LEFT MENU */
+
+    .sidebar {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 18px;
+
+        width: 100%;
+    }
+
+
+    .nav-section {
+        margin-bottom: 0;
+    }
+
+
+    .nav-section h2 {
+        font-size: 22px;
+    }
+
+
+    .nav-section p {
+        max-width: 100%;
+
+        font-size: 9px;
+    }
+
+
+    /* CARD */
+
+    .content {
+        width: 100%;
+    }
+
+
+    .gossip-card {
+        width: 100%;
+
+        max-width: 450px;
+    }
+
+
+    .main-image {
+        height: 300px;
+    }
+
+
+    /* CHARACTERS */
+
+    .characters {
+        flex-direction: row;
+
+        flex-wrap: wrap;
+
+        gap: 20px;
+    }
+
+
+    /* SUBMITTED GOSSIP */
+
+    .community-gossip {
+        width: 100%;
+    }
+
+
+    /* POPUP */
+
+    .modal-box {
+        padding: 25px 20px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 450px) {
+
+    header h1 {
+        font-size: 45px;
+
+        letter-spacing: -3px;
+    }
+
+
+    .sidebar {
+        gap: 14px;
+    }
+
+
+    .nav-section h2 {
+        font-size: 19px;
+    }
+
+
+    .main-image {
+        height: 250px;
+    }
+
+
+    .story p {
+        font-size: 14px;
+    }
+
+
+    .story .small {
+        font-size: 10px;
+    }
+
+
+    .character img {
+        width: 55px;
+
+        height: 55px;
+    }
+
 }
