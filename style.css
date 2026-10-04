@@ -76,13 +76,13 @@ header {
 header h1 {
     font-family: "Montserrat", sans-serif;
 
-    font-size: clamp(30px, 10vw, 50px);
+    font-size: clamp(30px, 10vw, 45px);
 
     font-weight: 300;
 
     line-height: 0.85;
 
-    letter-spacing: -8px;
+    letter-spacing: -6px;
 
     color: #f1f3ad;
 
