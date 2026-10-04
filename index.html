@@ -92,7 +92,21 @@
             <!-- =========================
                  CENTER GOSSIP CARD
             ========================== -->
+            <!-- COMMUNITY GOSSIP -->
 
+<div
+    class="community-gossip"
+    id="communityGossip"
+></div>
+
+
+<!-- CENTER -->
+
+<section class="content">
+
+    <article class="gossip-card">
+
+        ...
             <section class="content">
 
                 <article class="gossip-card">
@@ -229,9 +243,80 @@
         </section>
 
 
-        <footer>
-            XOXO, Gossip Girl.
-        </footer>
+       <!-- SUBMIT GOSSIP BUTTON -->
+
+<div class="submit-area">
+
+    <button
+        class="submit-button"
+        onclick="openGossipForm()"
+    >
+        + submit gossip
+    </button>
+
+</div>
+
+
+<!-- GOSSIP SUBMISSION POPUP -->
+
+<div
+    class="modal"
+    id="gossipModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close-button"
+            onclick="closeGossipForm()"
+        >
+            ×
+        </button>
+
+        <h2>submit gossip</h2>
+
+        <p class="modal-subtitle">
+            Spotted something interesting?
+            Tell Gossip Girl.
+        </p>
+
+
+        <label>
+            your name
+        </label>
+
+        <input
+            type="text"
+            id="gossipName"
+            placeholder="Anonymous"
+        >
+
+
+        <label>
+            your gossip
+        </label>
+
+        <textarea
+            id="gossipText"
+            placeholder="Spill the tea..."
+        ></textarea>
+
+
+        <button
+            class="post-button"
+            onclick="submitGossip()"
+        >
+            POST GOSSIP
+        </button>
+
+    </div>
+
+</div>
+
+
+<footer>
+    XOXO, Gossip Girl.
+</footer>
 
     </main>
 
