@@ -1,0 +1,493 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    min-height: 100vh;
+
+    font-family: "Montserrat", sans-serif;
+
+    color: white;
+
+    background-image: url("newyork.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    overflow-x: hidden;
+}
+
+
+/* DARK OVERLAY */
+
+.overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.82),
+            rgba(0, 0, 0, 0.40),
+            rgba(0, 0, 0, 0.78)
+        );
+
+    z-index: 0;
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.page {
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 1200px;
+
+    min-height: 100vh;
+
+    margin: auto;
+
+    padding: 35px 50px 25px;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+header {
+    text-align: center;
+
+    margin-bottom: 15px;
+}
+
+
+header h1 {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: clamp(70px, 10vw, 140px);
+
+    font-weight: 300;
+
+    letter-spacing: -8px;
+
+    line-height: 0.8;
+
+    color: #f1f3ad;
+
+    text-shadow:
+        0 0 15px rgba(240, 243, 176, 0.15);
+}
+
+
+/* =========================
+   MAIN GRID
+========================= */
+
+.website {
+    display: grid;
+
+    grid-template-columns:
+        190px
+        minmax(350px, 1fr)
+        120px;
+
+    gap: 55px;
+
+    align-items: center;
+
+    min-height: 650px;
+}
+
+
+/* =========================
+   LEFT MENU
+========================= */
+
+.sidebar {
+    align-self: center;
+}
+
+
+.nav-section {
+    margin-bottom: 22px;
+}
+
+
+.nav-section h2 {
+    font-size: 27px;
+
+    font-weight: 400;
+
+    margin-bottom: 3px;
+}
+
+
+.nav-section p {
+    max-width: 170px;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+
+    color: rgba(255,255,255,0.88);
+}
+
+
+/* MENU COLORS */
+
+.blue {
+    color: #45bce9;
+}
+
+.pink {
+    color: #ff7187;
+}
+
+.yellow {
+    color: #f1ef9b;
+}
+
+.purple {
+    color: #d88be8;
+}
+
+.green {
+    color: #b9df62;
+}
+
+
+/* =========================
+   CENTER CARD
+========================= */
+
+.content {
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.gossip-card {
+    width: min(100%, 450px);
+
+    background: #f3f1df;
+
+    color: #111;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.55);
+
+    animation: appear 0.8s ease;
+}
+
+
+.card-header {
+    padding: 9px 10px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+
+/* MAIN SERENA IMAGE */
+
+.main-image {
+    display: block;
+
+    width: 100%;
+
+    height: 330px;
+
+    object-fit: cover;
+
+    border-radius: 3px;
+}
+
+
+.story {
+    padding: 14px 10px 7px;
+}
+
+
+.story p {
+    font-family: "Playfair Display", serif;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    margin-bottom: 10px;
+}
+
+
+.story .small {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   CARD FOOTER
+========================= */
+
+.story-footer {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 15px;
+
+    font-size: 9px;
+
+    color: #777;
+}
+
+
+.story-footer button {
+    margin-left: auto;
+
+    border: none;
+
+    background: transparent;
+
+    color: #279ed0;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+.story-footer button:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   RIGHT CHARACTERS
+========================= */
+
+.characters {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.character {
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+
+    text-align: center;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+.character:hover {
+    transform: scale(1.1);
+
+    opacity: 0.9;
+}
+
+
+.character img {
+    display: block;
+
+    width: 66px;
+
+    height: 66px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 2px solid #ebed9e;
+
+    margin-bottom: 5px;
+
+    box-shadow:
+        0 0 10px rgba(235,240,160,0.3);
+}
+
+
+.character span {
+    display: block;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 14px;
+
+    color: #f0f3b0;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    margin-top: 15px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 13px;
+
+    color: #f0f3b0;
+
+    opacity: 0.8;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+    .page {
+        padding: 25px;
+    }
+
+
+    header h1 {
+        font-size: 70px;
+
+        letter-spacing: -5px;
+    }
+
+
+    .website {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .sidebar {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+
+    .nav-section {
+        margin-bottom: 0;
+    }
+
+
+    .characters {
+        flex-direction: row;
+
+        justify-content: center;
+    }
+
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media (max-width: 500px) {
+
+    .page {
+        padding: 20px 15px;
+    }
+
+
+    header h1 {
+        font-size: 50px;
+
+        letter-spacing: -4px;
+    }
+
+
+    .sidebar {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .nav-section h2 {
+        font-size: 21px;
+    }
+
+
+    .nav-section p {
+        font-size: 10px;
+    }
+
+
+    .main-image {
+        height: 240px;
+    }
+
+
+    .gossip-card {
+        width: 100%;
+    }
+
+}
