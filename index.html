@@ -1,157 +1,562 @@
-<div class="news-feed">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Gossip Girl; Depok's Version</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
 
 
-    <!-- =================================================
-         CARD 1 — MARGO CITY
-    ================================================== -->
+<body>
 
-    <article class="gossip-card">
+    <div class="overlay"></div>
 
-        <div class="card-header">
-            Spotted: Margo City is where all the secrets happen!
+
+    <main class="page">
+
+
+        <!-- =========================
+             TITLE
+        ========================== -->
+
+        <header>
+
+            <h1>
+                gossip girl (Depok's Version)
+            </h1>
+
+        </header>
+
+
+
+        <!-- =========================
+             MAIN 3 COLUMN LAYOUT
+        ========================== -->
+
+        <section class="website">
+
+
+            <!-- =====================
+                 LEFT MENU
+            ====================== -->
+
+            <aside class="sidebar">
+
+
+                <div class="nav-section">
+
+                    <h2 class="blue">
+                        welcome
+                    </h2>
+
+                    <p>
+                        To Gossip Girl, your inside source
+                        for the Depokers.
+                        XOXO, Gossip Girl.
+                    </p>
+
+                </div>
+
+
+                <div class="nav-section">
+
+                    <h2 class="pink">
+                        gossip
+                    </h2>
+
+                    <p>
+                        The latest rumors, secrets,
+                        and news on all the people.
+                    </p>
+
+                </div>
+
+
+                <div class="nav-section">
+
+                    <h2 class="yellow">
+                        pics
+                    </h2>
+
+                    <p>
+                        See what the Depokers
+                        is really wearing.
+                    </p>
+
+                </div>
+
+
+                <div class="nav-section">
+
+                    <h2 class="purple">
+                        parties
+                    </h2>
+
+                    <p>
+                        Your invitation was probably
+                        lost in the mail.
+                    </p>
+
+                </div>
+
+
+                <div class="nav-section">
+
+                    <h2 class="green">
+                        links
+                    </h2>
+
+                    <p>
+                        Fashion, beauty, events,
+                        and everything in Depok.
+                    </p>
+
+                </div>
+
+
+            </aside>
+
+
+
+            <!-- =====================
+                 CENTER NEWS
+            ====================== -->
+
+            <section class="content">
+
+
+                <div class="news-feed">
+
+
+                    <!-- =================================================
+                         CARD 1 — MARGO CITY
+                    ================================================== -->
+
+                    <article class="gossip-card">
+
+
+                        <div class="card-header">
+
+                            Spotted: Margo City is where all the secrets happen!
+
+                        </div>
+
+
+                        <img
+                            src="margocity.jpeg"
+                            alt="Margo City"
+                            class="main-image"
+                        >
+
+
+                        <div class="story">
+
+
+                            <p>
+
+                                Gossip Girl here. Looks like everyone in Depok
+                                has suddenly decided that Margo City is the place to be.
+
+                            </p>
+
+
+                            <p class="small">
+
+                                From suspiciously long shopping trips to unexpected
+                                encounters by the food court, you never know who
+                                you're going to run into. Coincidence? I think not.
+
+                            </p>
+
+
+                            <div class="story-footer">
+
+                                <span>
+                                    11/04/2026
+                                </span>
+
+                                <span>
+                                    Gossip Girl
+                                </span>
+
+                                <button onclick="readMore()">
+                                    read more →
+                                </button>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </article>
+
+
+
+                    <!-- =================================================
+                         CARD 2 — DEPOK GIRLS
+                    ================================================== -->
+
+                    <article class="gossip-card">
+
+
+                        <div class="card-header">
+
+                            Spotted: The Depok girls take over Manhattan!
+
+                        </div>
+
+
+                        <img
+                            src="depokers.jpeg"
+                            alt="The Depok girls in Manhattan"
+                            class="main-image"
+                        >
+
+
+                        <div class="story">
+
+
+                            <p>
+
+                                Gossip Girl here. Looks like the girls
+                                have officially traded DEPOK for Central Park.
+
+                            </p>
+
+
+                            <p class="small">
+
+                                Six besties, one perfect Manhattan afternoon,
+                                and enough secrets to keep me busy all week.
+
+                            </p>
+
+
+                            <div class="story-footer">
+
+                                <span>
+                                    12/04/2026
+                                </span>
+
+                                <span>
+                                    Gossip Girl
+                                </span>
+
+                                <button onclick="readMore()">
+                                    read more →
+                                </button>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </article>
+
+
+
+                    <!-- =================================================
+                         CARD 3 — SERENA
+                    ================================================== -->
+
+                    <article class="gossip-card">
+
+
+                        <div class="card-header">
+
+                            Spotted: Serena van der Woodsen!
+
+                        </div>
+
+
+                        <img
+                            src="serena.jpeg"
+                            alt="Serena van der Woodsen"
+                            class="main-image"
+                        >
+
+
+                        <div class="story">
+
+
+                            <p>
+
+                                Gossip Girl here, your one and only
+                                source into the scandalous lives
+                                of Depokers elite.
+
+                            </p>
+
+
+                            <p class="small">
+
+                                OMG!!! Girl is back, y'all.
+                                After weeks of being MIA,
+                                Serena van der Woodsen was
+                                spotted in Margonda.
+
+                            </p>
+
+
+                            <div class="story-footer">
+
+                                <span>
+                                    11/04/2026
+                                </span>
+
+                                <span>
+                                    Gossip Girl
+                                </span>
+
+                                <button onclick="readMore()">
+                                    read more →
+                                </button>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </article>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =====================
+                 RIGHT CHARACTERS
+            ====================== -->
+
+            <aside class="characters">
+
+
+                <button
+                    class="character"
+                    onclick="showCharacter('Serena')"
+                >
+
+                    <img
+                        src="serena.jpeg"
+                        alt="Serena"
+                    >
+
+                    <span>
+                        serena
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="character"
+                    onclick="showCharacter('Blair')"
+                >
+
+                    <img
+                        src="blair.jpg"
+                        alt="Blair"
+                    >
+
+                    <span>
+                        blair
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="character"
+                    onclick="showCharacter('Chuck')"
+                >
+
+                    <img
+                        src="chuckbass.jpeg"
+                        alt="Chuck Bass"
+                    >
+
+                    <span>
+                        chuck
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="character"
+                    onclick="showCharacter('Nate')"
+                >
+
+                    <img
+                        src="natearchibald.jpeg"
+                        alt="Nate Archibald"
+                    >
+
+                    <span>
+                        nate
+                    </span>
+
+                </button>
+
+
+            </aside>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             COMMUNITY GOSSIP
+        ========================== -->
+
+        <div
+            class="community-gossip"
+            id="communityGossip"
+        ></div>
+
+
+
+        <!-- =========================
+             SUBMIT BUTTON
+        ========================== -->
+
+        <div class="submit-area">
+
+            <button
+                class="submit-button"
+                onclick="openGossipForm()"
+            >
+
+                + submit gossip
+
+            </button>
+
         </div>
 
-        <img
-            src="margocity.jpeg"
-            alt="Margo City"
-            class="main-image"
+
+
+        <!-- =========================
+             SUBMIT POPUP
+        ========================== -->
+
+        <div
+            class="modal"
+            id="gossipModal"
         >
 
-        <div class="story">
+            <div class="modal-box">
 
-            <p>
-                Gossip Girl here. Looks like everyone in Depok
-                has suddenly decided that Margo City is the place to be.
-            </p>
 
-            <p class="small">
-                From suspiciously long shopping trips to unexpected
-                encounters by the food court, you never know who
-                you're going to run into. Coincidence? I think not.
-            </p>
+                <button
+                    class="close-button"
+                    onclick="closeGossipForm()"
+                >
 
-            <div class="story-footer">
+                    ×
 
-                <span>
-                    11/04/2026
-                </span>
-
-                <span>
-                    Gossip Girl
-                </span>
-
-                <button onclick="readMore()">
-                    read more →
                 </button>
+
+
+                <h2>
+                    submit gossip
+                </h2>
+
+
+                <p class="modal-subtitle">
+
+                    Spotted something interesting?
+                    Tell Gossip Girl.
+
+                </p>
+
+
+                <label for="gossipName">
+                    your name
+                </label>
+
+
+                <input
+                    type="text"
+                    id="gossipName"
+                    placeholder="Anonymous"
+                >
+
+
+                <label for="gossipText">
+                    your gossip
+                </label>
+
+
+                <textarea
+                    id="gossipText"
+                    placeholder="Spill the tea..."
+                ></textarea>
+
+
+                <button
+                    class="post-button"
+                    onclick="submitGossip()"
+                >
+
+                    POST GOSSIP
+
+                </button>
+
 
             </div>
 
         </div>
 
-    </article>
 
 
+        <!-- =========================
+             FOOTER
+        ========================== -->
 
-    <!-- =================================================
-         CARD 2 — DEPOK GIRLS
-    ================================================== -->
+        <footer>
 
-    <article class="gossip-card">
+            XOXO, Gossip Girl.
 
-        <div class="card-header">
-            Spotted: The Depok girls take over Manhattan!
-        </div>
-
-        <img
-            src="depokers.jpeg"
-            alt="The Depok girls in Manhattan"
-            class="main-image"
-        >
-
-        <div class="story">
-
-            <p>
-                Gossip Girl here. Looks like the girls
-                have officially traded DEPOK for Central Park.
-            </p>
-
-            <p class="small">
-                Six besties, one perfect Manhattan afternoon,
-                and enough secrets to keep me busy all week.
-            </p>
-
-            <div class="story-footer">
-
-                <span>
-                    12/04/2026
-                </span>
-
-                <span>
-                    Gossip Girl
-                </span>
-
-                <button onclick="readMore()">
-                    read more →
-                </button>
-
-            </div>
-
-        </div>
-
-    </article>
+        </footer>
 
 
-
-    <!-- =================================================
-         CARD 3 — SERENA
-    ================================================== -->
-
-    <article class="gossip-card">
-
-        <div class="card-header">
-            Spotted: Serena van der Woodsen!
-        </div>
-
-        <img
-            src="serena.jpeg"
-            alt="Serena van der Woodsen"
-            class="main-image"
-        >
-
-        <div class="story">
-
-            <p>
-                Gossip Girl here, your one and only
-                source into the scandalous lives
-                of Depokers elite.
-            </p>
-
-            <p class="small">
-                OMG!!! Girl is back, y'all.
-                After weeks of being MIA,
-                Serena van der Woodsen was
-                spotted in Margonda.
-            </p>
-
-            <div class="story-footer">
-
-                <span>
-                    11/04/2026
-                </span>
-
-                <span>
-                    Gossip Girl
-                </span>
-
-                <button onclick="readMore()">
-                    read more →
-                </button>
-
-            </div>
-
-        </div>
-
-    </article>
+    </main>
 
 
-</div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

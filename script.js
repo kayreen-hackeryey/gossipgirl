@@ -1,13 +1,13 @@
-/* =====================================================
-   CHARACTER BUTTONS
-===================================================== */
+/* =========================================================
+   CHARACTER POPUPS
+========================================================= */
 
 function showCharacter(name) {
 
     const messages = {
 
         Serena:
-            "Spotted: Serena van der Woodsen is back on the Upper East Side...",
+            "Spotted: Serena van der Woodsen is back in Depok. Looks like Margonda has a new VIP.",
 
         Blair:
             "Queen B has entered the chat. Everyone else, take notes.",
@@ -20,15 +20,14 @@ function showCharacter(name) {
 
     };
 
-
     alert(messages[name]);
 
 }
 
 
-/* =====================================================
+/* =========================================================
    READ MORE
-===================================================== */
+========================================================= */
 
 function readMore() {
 
@@ -39,35 +38,37 @@ function readMore() {
 }
 
 
-/* =====================================================
+/* =========================================================
    OPEN GOSSIP FORM
-===================================================== */
+========================================================= */
 
 function openGossipForm() {
 
     document
         .getElementById("gossipModal")
-        .classList.add("active");
+        .classList
+        .add("active");
 
 }
 
 
-/* =====================================================
+/* =========================================================
    CLOSE GOSSIP FORM
-===================================================== */
+========================================================= */
 
 function closeGossipForm() {
 
     document
         .getElementById("gossipModal")
-        .classList.remove("active");
+        .classList
+        .remove("active");
 
 }
 
 
-/* =====================================================
+/* =========================================================
    SUBMIT GOSSIP
-===================================================== */
+========================================================= */
 
 function submitGossip() {
 
@@ -76,7 +77,6 @@ function submitGossip() {
             .getElementById("gossipName")
             .value
             .trim();
-
 
     const gossip =
         document
@@ -92,7 +92,6 @@ function submitGossip() {
         );
 
         return;
-
     }
 
 
@@ -108,14 +107,18 @@ function submitGossip() {
 
         text: gossip,
 
-        date: new Date().toLocaleDateString()
+        date:
+            new Date()
+                .toLocaleDateString()
 
     };
 
 
     let gossips =
         JSON.parse(
-            localStorage.getItem("gossipGirlPosts")
+            localStorage.getItem(
+                "gossipGirlPosts"
+            )
         ) || [];
 
 
@@ -132,14 +135,12 @@ function submitGossip() {
         .getElementById("gossipName")
         .value = "";
 
-
     document
         .getElementById("gossipText")
         .value = "";
 
 
     closeGossipForm();
-
 
     displayGossip();
 
@@ -151,9 +152,9 @@ function submitGossip() {
 }
 
 
-/* =====================================================
+/* =========================================================
    DISPLAY COMMUNITY GOSSIP
-===================================================== */
+========================================================= */
 
 function displayGossip() {
 
@@ -165,7 +166,9 @@ function displayGossip() {
 
     let gossips =
         JSON.parse(
-            localStorage.getItem("gossipGirlPosts")
+            localStorage.getItem(
+                "gossipGirlPosts"
+            )
         ) || [];
 
 
@@ -178,7 +181,6 @@ function displayGossip() {
         );
 
         return;
-
     }
 
 
@@ -196,7 +198,6 @@ function displayGossip() {
 
     latest.forEach(function(post) {
 
-
         const card =
             document.createElement("div");
 
@@ -208,11 +209,17 @@ function displayGossip() {
         card.innerHTML = `
 
             <div class="gossip-user">
-                Spotted by ${escapeHTML(post.name)}
+
+                Spotted by
+                ${escapeHTML(post.name)}
+
             </div>
 
+
             <div class="gossip-message">
+
                 ${escapeHTML(post.text)}
+
             </div>
 
         `;
@@ -225,9 +232,9 @@ function displayGossip() {
 }
 
 
-/* =====================================================
-   SECURITY
-===================================================== */
+/* =========================================================
+   SECURITY — ESCAPE USER INPUT
+========================================================= */
 
 function escapeHTML(text) {
 
@@ -243,9 +250,9 @@ function escapeHTML(text) {
 }
 
 
-/* =====================================================
+/* =========================================================
    CLOSE MODAL WHEN CLICKING OUTSIDE
-===================================================== */
+========================================================= */
 
 document.addEventListener(
     "click",
@@ -269,9 +276,9 @@ document.addEventListener(
 );
 
 
-/* =====================================================
-   LOAD SAVED GOSSIP
-===================================================== */
+/* =========================================================
+   LOAD COMMUNITY GOSSIP
+========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
