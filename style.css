@@ -1,5 +1,5 @@
 /* =========================================================
-   GOSSIP GIRL — STYLE.CSS
+   GOSSIP GIRL — DEPOK'S VERSION
 ========================================================= */
 
 * {
@@ -13,8 +13,17 @@
    BODY
 ========================================================= */
 
+html,
 body {
-    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
 
     background-image: url("newyork.jpg");
     background-size: cover;
@@ -24,14 +33,19 @@ body {
     font-family: "Montserrat", sans-serif;
     color: white;
 
-    overflow-x: hidden;
+    /* IMPORTANT:
+       THE WHOLE WEBSITE CANNOT SCROLL */
+    overflow: hidden;
 }
 
 
-/* DARK OVERLAY */
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
 
 .overlay {
     position: fixed;
+
     inset: 0;
 
     background:
@@ -43,24 +57,32 @@ body {
         );
 
     z-index: 0;
+
     pointer-events: none;
 }
 
 
 /* =========================================================
-   MAIN PAGE
+   PAGE
 ========================================================= */
 
 .page {
     position: relative;
+
     z-index: 1;
 
     width: 100%;
     max-width: 1250px;
 
-    margin: auto;
+    height: 100vh;
+
+    margin: 0 auto;
 
     padding: 25px 35px 40px;
+
+    /* IMPORTANT:
+       PAGE ITSELF CANNOT SCROLL */
+    overflow: hidden;
 }
 
 
@@ -69,7 +91,10 @@ body {
 ========================================================= */
 
 header {
+    width: 100%;
+
     text-align: center;
+
     margin-bottom: 40px;
 }
 
@@ -80,9 +105,9 @@ header h1 {
 
     font-weight: 300;
 
-    line-height: 0.85;
+    line-height: 0.9;
 
-    letter-spacing: -8px;
+    letter-spacing: -4px;
 
     color: #f1f3ad;
 
@@ -109,6 +134,8 @@ header h1 {
     column-gap: 45px;
 
     width: 100%;
+
+    min-height: 0;
 }
 
 
@@ -118,6 +145,8 @@ header h1 {
 
 .sidebar {
     padding-top: 15px;
+
+    min-width: 0;
 }
 
 .nav-section {
@@ -143,7 +172,7 @@ header h1 {
 }
 
 
-/* COLORS */
+/* SIDEBAR COLORS */
 
 .blue {
     color: #3dbce9;
@@ -173,16 +202,19 @@ header h1 {
 .content {
     width: 100%;
 
+    min-width: 0;
+
+    height: 700px;
+
     display: block;
 
-    min-width: 0;
+    overflow: hidden;
 }
 
 
 /* =========================================================
    NEWS FEED
-   IMPORTANT:
-   CARDS WILL ALWAYS STACK VERTICALLY
+   THIS IS THE ONLY SCROLLABLE AREA
 ========================================================= */
 
 .news-feed {
@@ -194,17 +226,61 @@ header h1 {
 
     justify-content: flex-start;
 
+    flex-wrap: nowrap !important;
+
     width: 100%;
+
+    height: 700px;
+
+    min-height: 0;
 
     gap: 60px;
 
-    padding: 5px 5px 40px;
+    padding: 5px 15px 40px;
 
-    max-height: none;
+    /* ONLY THIS AREA SCROLLS */
 
-    overflow: visible;
+    overflow-y: auto;
 
-    flex-wrap: nowrap !important;
+    overflow-x: hidden;
+
+    scroll-behavior: smooth;
+
+    scrollbar-gutter: stable;
+}
+
+
+/* =========================================================
+   NEWS FEED SCROLLBAR
+========================================================= */
+
+.news-feed::-webkit-scrollbar {
+    width: 5px;
+}
+
+.news-feed::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.news-feed::-webkit-scrollbar-thumb {
+    background: rgba(241, 243, 173, 0.6);
+
+    border-radius: 10px;
+}
+
+.news-feed::-webkit-scrollbar-thumb:hover {
+    background: rgba(241, 243, 173, 0.9);
+}
+
+
+/* Firefox */
+
+.news-feed {
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(241, 243, 173, 0.6)
+        transparent;
 }
 
 
@@ -221,13 +297,18 @@ header h1 {
 
     max-width: 430px;
 
+    min-width: 0;
+
+    /* IMPORTANT:
+       CARDS DON'T SHRINK */
+
     flex: 0 0 auto !important;
+
+    flex-shrink: 0 !important;
 
     float: none !important;
 
     clear: both;
-
-    order: initial;
 
     margin: 0;
 
@@ -347,7 +428,7 @@ header h1 {
 
 
 /* =========================================================
-   RIGHT CHARACTER MENU
+   RIGHT CHARACTER COLUMN
 ========================================================= */
 
 .characters {
@@ -540,7 +621,9 @@ header h1 {
 }
 
 
-/* MODAL BOX */
+/* =========================================================
+   MODAL BOX
+========================================================= */
 
 .modal-box {
     position: relative;
@@ -580,7 +663,9 @@ header h1 {
 }
 
 
-/* CLOSE BUTTON */
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
 
 .close-button {
     position: absolute;
@@ -660,7 +745,9 @@ header h1 {
 }
 
 
-/* POST BUTTON */
+/* =========================================================
+   POST BUTTON
+========================================================= */
 
 .post-button {
     width: 100%;
@@ -746,9 +833,9 @@ footer {
     }
 
     header h1 {
-        font-size: 85px;
+        font-size: 70px;
 
-        letter-spacing: -5px;
+        letter-spacing: -4px;
     }
 
     .nav-section h2 {
@@ -770,11 +857,19 @@ footer {
 @media (max-width: 700px) {
 
     body {
+        height: 100vh;
+
+        overflow: hidden;
+
         background-attachment: scroll;
     }
 
     .page {
+        height: 100vh;
+
         padding: 20px;
+
+        overflow: hidden;
     }
 
     header {
@@ -782,9 +877,11 @@ footer {
     }
 
     header h1 {
-        font-size: 55px;
+        font-size: 48px;
 
-        letter-spacing: -4px;
+        letter-spacing: -3px;
+
+        white-space: normal;
     }
 
 
@@ -798,6 +895,10 @@ footer {
         align-items: center;
 
         gap: 35px;
+
+        height: calc(100vh - 130px);
+
+        overflow: hidden;
     }
 
 
@@ -811,6 +912,8 @@ footer {
         gap: 18px;
 
         width: 100%;
+
+        flex-shrink: 0;
     }
 
     .nav-section {
@@ -822,12 +925,22 @@ footer {
 
     .content {
         width: 100%;
+
+        height: 550px;
+
+        overflow: hidden;
+
+        flex-shrink: 0;
     }
 
 
-    /* CARDS */
+    /* MOBILE CARD SCROLL */
 
     .news-feed {
+        width: 100%;
+
+        height: 550px;
+
         display: flex !important;
 
         flex-direction: column !important;
@@ -836,13 +949,11 @@ footer {
 
         gap: 40px;
 
-        width: 100%;
+        padding: 5px 10px 30px;
 
-        max-height: none;
+        overflow-y: auto !important;
 
-        overflow: visible;
-
-        padding: 0;
+        overflow-x: hidden !important;
     }
 
     .gossip-card {
@@ -851,6 +962,8 @@ footer {
         max-width: 450px;
 
         flex: 0 0 auto !important;
+
+        flex-shrink: 0 !important;
     }
 
 
@@ -862,6 +975,8 @@ footer {
         flex-wrap: wrap;
 
         justify-content: center;
+
+        flex-shrink: 0;
     }
 
 
@@ -880,9 +995,9 @@ footer {
 @media (max-width: 450px) {
 
     header h1 {
-        font-size: 43px;
+        font-size: 40px;
 
-        letter-spacing: -3px;
+        letter-spacing: -2px;
     }
 
     .sidebar {
@@ -895,5 +1010,13 @@ footer {
 
     .main-image {
         height: 250px;
+    }
+
+    .content {
+        height: 500px;
+    }
+
+    .news-feed {
+        height: 500px;
     }
 }
