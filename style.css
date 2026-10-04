@@ -76,7 +76,7 @@ header {
 header h1 {
     font-family: "Montserrat", sans-serif;
 
-    font-size: clamp(70px, 10vw, 135px);
+    font-size: clamp(45px, 6vw, 85px);
 
     font-weight: 300;
 
