@@ -1,6 +1,6 @@
-/* =========================
+/* =====================================================
    CHARACTER BUTTONS
-========================= */
+===================================================== */
 
 function showCharacter(name) {
 
@@ -17,16 +17,18 @@ function showCharacter(name) {
 
         Nate:
             "Nate Archibald. Looks like someone has been keeping secrets..."
+
     };
 
 
     alert(messages[name]);
+
 }
 
 
-/* =========================
+/* =====================================================
    READ MORE
-========================= */
+===================================================== */
 
 function readMore() {
 
@@ -37,67 +39,68 @@ function readMore() {
 }
 
 
-/* =========================
-   OPEN FORM
-========================= */
+/* =====================================================
+   OPEN SUBMIT FORM
+===================================================== */
 
 function openGossipForm() {
 
-    const modal =
-        document.getElementById("gossipModal");
-
-    modal.classList.add("active");
+    document
+        .getElementById("gossipModal")
+        .classList.add("active");
 
 }
 
 
-/* =========================
-   CLOSE FORM
-========================= */
+/* =====================================================
+   CLOSE SUBMIT FORM
+===================================================== */
 
 function closeGossipForm() {
 
-    const modal =
-        document.getElementById("gossipModal");
-
-    modal.classList.remove("active");
+    document
+        .getElementById("gossipModal")
+        .classList.remove("active");
 
 }
 
 
-/* =========================
+/* =====================================================
    SUBMIT GOSSIP
-========================= */
+===================================================== */
 
 function submitGossip() {
 
     const name =
-        document.getElementById("gossipName").value.trim();
+        document
+            .getElementById("gossipName")
+            .value
+            .trim();
+
 
     const gossip =
-        document.getElementById("gossipText").value.trim();
+        document
+            .getElementById("gossipText")
+            .value
+            .trim();
 
-
-    /* CHECK GOSSIP */
 
     if (gossip === "") {
 
-        alert("Gossip Girl needs some tea first...");
+        alert(
+            "Gossip Girl needs some tea first..."
+        );
 
         return;
 
     }
 
 
-    /* ANONYMOUS NAME */
-
     const username =
         name === ""
             ? "Anonymous"
             : name;
 
-
-    /* CREATE GOSSIP OBJECT */
 
     const newGossip = {
 
@@ -110,20 +113,14 @@ function submitGossip() {
     };
 
 
-    /* GET OLD GOSSIP */
-
     let gossips =
         JSON.parse(
             localStorage.getItem("gossipGirlPosts")
         ) || [];
 
 
-    /* ADD NEW GOSSIP */
-
     gossips.unshift(newGossip);
 
-
-    /* SAVE */
 
     localStorage.setItem(
         "gossipGirlPosts",
@@ -131,36 +128,39 @@ function submitGossip() {
     );
 
 
-    /* CLEAR FORM */
-
-    document.getElementById("gossipName").value = "";
-
-    document.getElementById("gossipText").value = "";
+    document
+        .getElementById("gossipName")
+        .value = "";
 
 
-    /* CLOSE */
+    document
+        .getElementById("gossipText")
+        .value = "";
+
 
     closeGossipForm();
 
 
-    /* UPDATE WEBSITE */
-
     displayGossip();
 
 
-    alert("Your gossip has been posted. XOXO, Gossip Girl.");
+    alert(
+        "Your gossip has been posted. XOXO, Gossip Girl."
+    );
 
 }
 
 
-/* =========================
-   DISPLAY GOSSIP
-========================= */
+/* =====================================================
+   DISPLAY USER GOSSIP
+===================================================== */
 
 function displayGossip() {
 
     const container =
-        document.getElementById("communityGossip");
+        document.getElementById(
+            "communityGossip"
+        );
 
 
     let gossips =
@@ -173,23 +173,22 @@ function displayGossip() {
 
         container.innerHTML = "";
 
-        container.classList.remove("has-gossip");
+        container.classList.remove(
+            "has-gossip"
+        );
 
         return;
 
     }
 
 
-    container.classList.add("has-gossip");
+    container.classList.add(
+        "has-gossip"
+    );
 
-
-    /*
-       Only show the latest 3
-       gossip posts
-    */
 
     const latest =
-        gossips.slice(0, 3);
+        gossips.slice(0, 5);
 
 
     container.innerHTML = "";
@@ -197,10 +196,13 @@ function displayGossip() {
 
     latest.forEach(function(post) {
 
+
         const card =
             document.createElement("div");
 
-        card.className = "user-gossip";
+
+        card.className =
+            "user-gossip";
 
 
         card.innerHTML = `
@@ -223,25 +225,53 @@ function displayGossip() {
 }
 
 
-/* =========================
+/* =====================================================
    SECURITY
-========================= */
+===================================================== */
 
 function escapeHTML(text) {
 
     const div =
         document.createElement("div");
 
+
     div.textContent = text;
+
 
     return div.innerHTML;
 
 }
 
 
-/* =========================
+/* =====================================================
+   CLOSE MODAL WHEN CLICKING OUTSIDE
+===================================================== */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        const modal =
+            document.getElementById(
+                "gossipModal"
+            );
+
+
+        if (
+            event.target === modal
+        ) {
+
+            closeGossipForm();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
    LOAD SAVED GOSSIP
-========================= */
+===================================================== */
 
 document.addEventListener(
     "DOMContentLoaded",

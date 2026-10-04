@@ -156,122 +156,178 @@
 
 
             <!-- =====================
-                 CENTER GOSSIP CARD
+                 CENTER GOSSIP FEED
             ====================== -->
 
             <section class="content">
 
 
-                <article class="gossip-card">
+                <!-- NEWS FEED
+                     CARDS WILL STACK
+                     VERTICALLY HERE -->
+
+                <div class="news-feed">
 
 
-                    <div class="card-header">
+                    <!-- =====================
+                         GOSSIP CARD 1
+                    ====================== -->
 
-                        Spotted:
-                        Serena van der Woodsen!
-
-                    </div>
-
+                    <article class="gossip-card">
 
 
-                    <img
-                        src="serena.jpeg"
-                        alt="Serena van der Woodsen"
-                        class="main-image"
-                    >
+                        <div class="card-header">
 
+                            Spotted:
+                            Serena van der Woodsen!
 
-
-                    <div class="story">
-
-
-                        <p>
-
-                            Gossip Girl here, your one and only
-                            source into the scandalous lives
-                            of Manhattan's elite.
-
-                        </p>
+                        </div>
 
 
 
-                        <p class="small">
-
-                            OMG!!! Girl is back, y'all.
-                            After weeks of being MIA,
-                            Serena van der Woodsen was
-                            spotted around the Upper East Side.
-
-                        </p>
+                        <img
+                            src="serena.jpeg"
+                            alt="Serena van der Woodsen"
+                            class="main-image"
+                        >
 
 
 
-                        <div class="story-footer">
+                        <div class="story">
 
 
-                            <span>
-                                11/04/2025
-                            </span>
+                            <p>
+
+                                Gossip Girl here, your one and only
+                                source into the scandalous lives
+                                of Manhattan's elite.
+
+                            </p>
 
 
-                            <span>
-                                Gossip Girl
-                            </span>
+
+                            <p class="small">
+
+                                OMG!!! Girl is back, y'all.
+                                After weeks of being MIA,
+                                Serena van der Woodsen was
+                                spotted around the Upper East Side.
+
+                            </p>
 
 
-                            <button
-                                onclick="readMore()"
-                            >
-                                read more →
-                            </button>
+
+                            <div class="story-footer">
+
+
+                                <span>
+                                    11/04/2025
+                                </span>
+
+
+                                <span>
+                                    Gossip Girl
+                                </span>
+
+
+                                <button
+                                    onclick="readMore()"
+                                >
+
+                                    read more →
+
+                                </button>
+
+
+                            </div>
 
 
                         </div>
 
 
-                    </div>
+                    </article>
 
 
-                </article>
-<article class="gossip-card">
 
-    <div class="card-header">
-        Spotted: The Depokers girls take over Manhattan!
-    </div>
+                    <!-- =====================
+                         GOSSIP CARD 2
+                    ====================== -->
 
-    <img
-        src="newyroker.jpeg"
-        alt="Blair Waldorf"
-        class="main-image"
-    >
+                    <article class="gossip-card">
 
-    <div class="story">
 
-        <p>
-            Gossip Girl here. Looks like the girls have officially 
-            traded DEPOK for Central Park. 
-        </p>
+                        <div class="card-header">
 
-        <p class="small">
-            Six besties, 
-            one perfect Manhattan afternoon, 
-            and enough secrets to keep me busy all week.
-        </p>
+                            Spotted:
+                            The Depokers girls take over Manhattan!
 
-        <div class="story-footer">
+                        </div>
 
-            <span>12/04/2026</span>
-            <span>Gossip Girl</span>
 
-            <button onclick="readMore()">
-                read more →
-            </button>
 
-        </div>
+                        <img
+                            src="newyorker.jpeg"
+                            alt="The Depokers girls in Manhattan"
+                            class="main-image"
+                        >
 
-    </div>
 
-</article>
+
+                        <div class="story">
+
+
+                            <p>
+
+                                Gossip Girl here. Looks like the girls
+                                have officially traded DEPOK for Central Park.
+
+                            </p>
+
+
+
+                            <p class="small">
+
+                                Six besties,
+                                one perfect Manhattan afternoon,
+                                and enough secrets to keep me busy all week.
+
+                            </p>
+
+
+
+                            <div class="story-footer">
+
+
+                                <span>
+                                    12/04/2026
+                                </span>
+
+
+                                <span>
+                                    Gossip Girl
+                                </span>
+
+
+                                <button
+                                    onclick="readMore()"
+                                >
+
+                                    read more →
+
+                                </button>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </article>
+
+
+                </div>
+
 
             </section>
 
@@ -367,16 +423,12 @@
 
 
         </section>
-        <!-- END OF 3-COLUMN WEBSITE -->
 
 
 
-        <!-- =================================================
+        <!-- =========================
              COMMUNITY GOSSIP
-             
-             IMPORTANT:
-             THIS IS OUTSIDE .website
-        ================================================== -->
+        ========================== -->
 
         <div
             class="community-gossip"
@@ -419,8 +471,6 @@
             <div class="modal-box">
 
 
-                <!-- CLOSE BUTTON -->
-
                 <button
                     class="close-button"
                     onclick="closeGossipForm()"
@@ -431,8 +481,6 @@
                 </button>
 
 
-
-                <!-- TITLE -->
 
                 <h2>
                     submit gossip
@@ -449,8 +497,6 @@
 
 
 
-                <!-- NAME -->
-
                 <label for="gossipName">
 
                     your name
@@ -466,8 +512,6 @@
 
 
 
-                <!-- GOSSIP -->
-
                 <label for="gossipText">
 
                     your gossip
@@ -481,8 +525,6 @@
                 ></textarea>
 
 
-
-                <!-- POST -->
 
                 <button
                     class="post-button"
