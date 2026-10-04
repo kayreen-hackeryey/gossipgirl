@@ -1,6 +1,6 @@
-/* =====================================================
-   RESET
-===================================================== */
+/* =========================================================
+   GOSSIP GIRL — STYLE.CSS
+========================================================= */
 
 * {
     margin: 0;
@@ -9,38 +9,29 @@
 }
 
 
-/* =====================================================
+/* =========================================================
    BODY
-===================================================== */
+========================================================= */
 
 body {
-
     min-height: 100vh;
 
     background-image: url("newyork.jpg");
-
     background-size: cover;
-
     background-position: center;
-
     background-attachment: fixed;
 
     font-family: "Montserrat", sans-serif;
-
     color: white;
 
     overflow-x: hidden;
 }
 
 
-/* =====================================================
-   BACKGROUND OVERLAY
-===================================================== */
+/* DARK OVERLAY */
 
 .overlay {
-
     position: fixed;
-
     inset: 0;
 
     background:
@@ -52,23 +43,19 @@ body {
         );
 
     z-index: 0;
-
     pointer-events: none;
 }
 
 
-/* =====================================================
-   PAGE
-===================================================== */
+/* =========================================================
+   MAIN PAGE
+========================================================= */
 
 .page {
-
     position: relative;
-
     z-index: 1;
 
     width: 100%;
-
     max-width: 1250px;
 
     margin: auto;
@@ -77,20 +64,16 @@ body {
 }
 
 
-/* =====================================================
-   GOSSIP GIRL TITLE
-===================================================== */
+/* =========================================================
+   TITLE
+========================================================= */
 
 header {
-
     text-align: center;
-
     margin-bottom: 40px;
 }
 
-
 header h1 {
-
     font-family: "Montserrat", sans-serif;
 
     font-size: clamp(70px, 10vw, 135px);
@@ -107,12 +90,11 @@ header h1 {
 }
 
 
-/* =====================================================
+/* =========================================================
    MAIN 3 COLUMN LAYOUT
-===================================================== */
+========================================================= */
 
 .website {
-
     display: grid;
 
     grid-template-columns:
@@ -130,24 +112,19 @@ header h1 {
 }
 
 
-/* =====================================================
+/* =========================================================
    LEFT SIDEBAR
-===================================================== */
+========================================================= */
 
 .sidebar {
-
     padding-top: 15px;
 }
 
-
 .nav-section {
-
     margin-bottom: 27px;
 }
 
-
 .nav-section h2 {
-
     margin-bottom: 5px;
 
     font-size: 23px;
@@ -157,9 +134,7 @@ header h1 {
     line-height: 1;
 }
 
-
 .nav-section p {
-
     font-size: 9px;
 
     line-height: 1.5;
@@ -168,113 +143,93 @@ header h1 {
 }
 
 
+/* COLORS */
+
 .blue {
     color: #3dbce9;
 }
-
 
 .pink {
     color: #ff7088;
 }
 
-
 .yellow {
     color: #f0ed98;
 }
 
-
 .purple {
     color: #d98be9;
 }
-
 
 .green {
     color: #b9df62;
 }
 
 
-/* =====================================================
-   CENTER
-===================================================== */
+/* =========================================================
+   CENTER CONTENT
+========================================================= */
 
 .content {
-
     width: 100%;
+
+    display: block;
+
+    min-width: 0;
 }
 
 
-/* =====================================================
+/* =========================================================
    NEWS FEED
-
    IMPORTANT:
-   CARDS ARE VERTICAL
-===================================================== */
+   CARDS WILL ALWAYS STACK VERTICALLY
+========================================================= */
 
 .news-feed {
+    display: flex !important;
 
-    display: flex;
-
-    flex-direction: column;
+    flex-direction: column !important;
 
     align-items: center;
 
+    justify-content: flex-start;
+
     width: 100%;
 
-    /*
-       THIS IS THE GAP BETWEEN
-       YOUR PHOTO AND SERENA
-    */
+    gap: 60px;
 
-    gap: 55px;
+    padding: 5px 5px 40px;
 
-    padding: 5px 5px 30px;
+    max-height: none;
 
-    /*
-       Allows you to scroll through
-       lots of gossip cards
-    */
+    overflow: visible;
 
-    max-height: 760px;
-
-    overflow-y: auto;
+    flex-wrap: nowrap !important;
 }
 
 
-/* =====================================================
-   SCROLLBAR
-===================================================== */
-
-.news-feed::-webkit-scrollbar {
-
-    width: 5px;
-}
-
-
-.news-feed::-webkit-scrollbar-track {
-
-    background: transparent;
-}
-
-
-.news-feed::-webkit-scrollbar-thumb {
-
-    background: rgba(241, 243, 173, 0.55);
-
-    border-radius: 10px;
-}
-
-
-/* =====================================================
-   GOSSIP CARD
-===================================================== */
+/* =========================================================
+   GOSSIP CARDS
+========================================================= */
 
 .gossip-card {
+    display: block !important;
+
+    position: relative;
 
     width: 100%;
 
     max-width: 430px;
 
-    flex-shrink: 0;
+    flex: 0 0 auto !important;
+
+    float: none !important;
+
+    clear: both;
+
+    order: initial;
+
+    margin: 0;
 
     background: #f3f1df;
 
@@ -291,12 +246,11 @@ header h1 {
 }
 
 
-/* =====================================================
-   CARD TITLE
-===================================================== */
+/* =========================================================
+   CARD HEADER
+========================================================= */
 
 .card-header {
-
     padding: 7px 10px 11px;
 
     font-size: 14px;
@@ -307,12 +261,11 @@ header h1 {
 }
 
 
-/* =====================================================
+/* =========================================================
    CARD IMAGE
-===================================================== */
+========================================================= */
 
 .main-image {
-
     display: block;
 
     width: 100%;
@@ -327,18 +280,15 @@ header h1 {
 }
 
 
-/* =====================================================
+/* =========================================================
    STORY
-===================================================== */
+========================================================= */
 
 .story {
-
     padding: 15px 10px 8px;
 }
 
-
 .story > p:first-child {
-
     margin-bottom: 12px;
 
     font-family: "Playfair Display", serif;
@@ -348,9 +298,7 @@ header h1 {
     line-height: 1.45;
 }
 
-
 .story .small {
-
     margin-bottom: 10px;
 
     font-size: 11px;
@@ -359,12 +307,11 @@ header h1 {
 }
 
 
-/* =====================================================
+/* =========================================================
    STORY FOOTER
-===================================================== */
+========================================================= */
 
 .story-footer {
-
     display: flex;
 
     align-items: center;
@@ -378,9 +325,7 @@ header h1 {
     font-size: 8px;
 }
 
-
 .story-footer button {
-
     margin-left: auto;
 
     border: none;
@@ -396,19 +341,16 @@ header h1 {
     cursor: pointer;
 }
 
-
 .story-footer button:hover {
-
     text-decoration: underline;
 }
 
 
-/* =====================================================
+/* =========================================================
    RIGHT CHARACTER MENU
-===================================================== */
+========================================================= */
 
 .characters {
-
     display: flex;
 
     flex-direction: column;
@@ -420,9 +362,7 @@ header h1 {
     padding-top: 15px;
 }
 
-
 .character {
-
     display: flex;
 
     flex-direction: column;
@@ -440,15 +380,11 @@ header h1 {
     transition: transform 0.25s ease;
 }
 
-
 .character:hover {
-
     transform: scale(1.08);
 }
 
-
 .character img {
-
     width: 62px;
 
     height: 62px;
@@ -462,9 +398,7 @@ header h1 {
     margin-bottom: 5px;
 }
 
-
 .character span {
-
     color: #f0f3b0;
 
     font-family: "Playfair Display", serif;
@@ -473,12 +407,11 @@ header h1 {
 }
 
 
-/* =====================================================
+/* =========================================================
    COMMUNITY GOSSIP
-===================================================== */
+========================================================= */
 
 .community-gossip {
-
     display: none;
 
     width: min(100%, 500px);
@@ -486,9 +419,7 @@ header h1 {
     margin: 45px auto 0;
 }
 
-
 .community-gossip.has-gossip {
-
     display: flex;
 
     flex-direction: column;
@@ -497,8 +428,9 @@ header h1 {
 }
 
 
-.user-gossip {
+/* USER GOSSIP CARD */
 
+.user-gossip {
     width: 100%;
 
     padding: 15px 18px;
@@ -515,9 +447,7 @@ header h1 {
         0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-
 .gossip-user {
-
     margin-bottom: 6px;
 
     color: #e66f87;
@@ -531,9 +461,7 @@ header h1 {
     letter-spacing: 1px;
 }
 
-
 .gossip-message {
-
     font-family: "Playfair Display", serif;
 
     font-size: 15px;
@@ -542,12 +470,11 @@ header h1 {
 }
 
 
-/* =====================================================
-   SUBMIT AREA
-===================================================== */
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
 
 .submit-area {
-
     display: flex;
 
     justify-content: center;
@@ -555,9 +482,7 @@ header h1 {
     margin-top: 35px;
 }
 
-
 .submit-button {
-
     padding: 10px 22px;
 
     border: 1px solid #f0f3b0;
@@ -577,9 +502,7 @@ header h1 {
     transition: 0.25s;
 }
 
-
 .submit-button:hover {
-
     background: #f0f3b0;
 
     color: #111;
@@ -588,12 +511,11 @@ header h1 {
 }
 
 
-/* =====================================================
+/* =========================================================
    MODAL
-===================================================== */
+========================================================= */
 
 .modal {
-
     display: none;
 
     position: fixed;
@@ -613,19 +535,14 @@ header h1 {
     backdrop-filter: blur(8px);
 }
 
-
 .modal.active {
-
     display: flex;
 }
 
 
-/* =====================================================
-   MODAL BOX
-===================================================== */
+/* MODAL BOX */
 
 .modal-box {
-
     position: relative;
 
     width: min(100%, 440px);
@@ -642,9 +559,7 @@ header h1 {
         0 25px 80px rgba(0, 0, 0, 0.65);
 }
 
-
 .modal-box h2 {
-
     margin-bottom: 5px;
 
     font-family: "Playfair Display", serif;
@@ -654,9 +569,7 @@ header h1 {
     font-weight: 400;
 }
 
-
 .modal-subtitle {
-
     margin-bottom: 20px;
 
     color: #777;
@@ -667,12 +580,9 @@ header h1 {
 }
 
 
-/* =====================================================
-   CLOSE BUTTON
-===================================================== */
+/* CLOSE BUTTON */
 
 .close-button {
-
     position: absolute;
 
     top: 10px;
@@ -690,19 +600,16 @@ header h1 {
     cursor: pointer;
 }
 
-
 .close-button:hover {
-
     color: #000;
 }
 
 
-/* =====================================================
+/* =========================================================
    FORM
-===================================================== */
+========================================================= */
 
 .modal-box label {
-
     display: block;
 
     margin-top: 15px;
@@ -720,10 +627,8 @@ header h1 {
     letter-spacing: 1px;
 }
 
-
 .modal-box input,
 .modal-box textarea {
-
     width: 100%;
 
     padding: 11px;
@@ -743,28 +648,21 @@ header h1 {
     font-size: 12px;
 }
 
-
 .modal-box textarea {
-
     min-height: 120px;
 
     resize: vertical;
 }
 
-
 .modal-box input:focus,
 .modal-box textarea:focus {
-
     border-color: #888;
 }
 
 
-/* =====================================================
-   POST BUTTON
-===================================================== */
+/* POST BUTTON */
 
 .post-button {
-
     width: 100%;
 
     margin-top: 20px;
@@ -786,19 +684,16 @@ header h1 {
     cursor: pointer;
 }
 
-
 .post-button:hover {
-
     background: #333;
 }
 
 
-/* =====================================================
+/* =========================================================
    FOOTER
-===================================================== */
+========================================================= */
 
 footer {
-
     margin-top: 35px;
 
     text-align: center;
@@ -811,45 +706,37 @@ footer {
 }
 
 
-/* =====================================================
+/* =========================================================
    ANIMATION
-===================================================== */
+========================================================= */
 
 @keyframes cardAppear {
 
     from {
-
         opacity: 0;
 
         transform: translateY(20px);
-
     }
 
     to {
-
         opacity: 1;
 
         transform: translateY(0);
-
     }
-
 }
 
 
-/* =====================================================
+/* =========================================================
    TABLET
-===================================================== */
+========================================================= */
 
 @media (max-width: 900px) {
 
     .page {
-
         padding: 25px;
     }
 
-
     .website {
-
         grid-template-columns:
             140px
             minmax(0, 420px)
@@ -858,65 +745,52 @@ footer {
         column-gap: 25px;
     }
 
-
     header h1 {
-
         font-size: 85px;
 
         letter-spacing: -5px;
     }
 
-
     .nav-section h2 {
-
         font-size: 21px;
     }
 
-
     .character img {
-
         width: 55px;
 
         height: 55px;
     }
-
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBILE
-===================================================== */
+========================================================= */
 
 @media (max-width: 700px) {
 
     body {
-
         background-attachment: scroll;
     }
 
-
     .page {
-
         padding: 20px;
     }
 
-
     header {
-
         margin-bottom: 35px;
     }
 
-
     header h1 {
-
         font-size: 55px;
 
         letter-spacing: -4px;
     }
 
 
-    .website {
+    /* MAIN LAYOUT */
 
+    .website {
         display: flex;
 
         flex-direction: column;
@@ -927,8 +801,9 @@ footer {
     }
 
 
-    .sidebar {
+    /* SIDEBAR */
 
+    .sidebar {
         display: grid;
 
         grid-template-columns: 1fr 1fr;
@@ -938,46 +813,50 @@ footer {
         width: 100%;
     }
 
-
     .nav-section {
-
         margin-bottom: 0;
     }
 
 
-    .content {
+    /* CONTENT */
 
+    .content {
         width: 100%;
     }
 
 
+    /* CARDS */
+
     .news-feed {
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center;
+
+        gap: 40px;
+
+        width: 100%;
 
         max-height: none;
 
         overflow: visible;
 
-        /*
-           Still keeps a nice gap
-           on phones
-        */
-
-        gap: 40px;
-
         padding: 0;
     }
 
-
     .gossip-card {
-
         width: 100%;
 
         max-width: 450px;
+
+        flex: 0 0 auto !important;
     }
 
 
-    .characters {
+    /* CHARACTERS */
 
+    .characters {
         flex-direction: row;
 
         flex-wrap: wrap;
@@ -986,43 +865,35 @@ footer {
     }
 
 
-    .community-gossip {
+    /* COMMUNITY */
 
+    .community-gossip {
         width: 100%;
     }
-
 }
 
 
-/* =====================================================
+/* =========================================================
    SMALL PHONE
-===================================================== */
+========================================================= */
 
 @media (max-width: 450px) {
 
     header h1 {
-
         font-size: 43px;
 
         letter-spacing: -3px;
     }
 
-
     .sidebar {
-
         gap: 12px;
     }
 
-
     .nav-section h2 {
-
         font-size: 18px;
     }
 
-
     .main-image {
-
         height: 250px;
     }
-
 }
