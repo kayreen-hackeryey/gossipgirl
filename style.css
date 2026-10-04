@@ -1,45 +1,49 @@
 /* =========================================================
-   RESET
+   GOSSIP GIRL — STYLE.CSS
 ========================================================= */
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-html {
-    width: 100%;
-    height: 100%;
-}
+
+/* =========================================================
+   BODY
+========================================================= */
 
 body {
-    width: 100%;
     min-height: 100vh;
-
-    font-family: "Montserrat", sans-serif;
 
     background-image: url("newyork.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 
-    color: #3b3028;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+
+    overflow-x: hidden;
 }
 
 
-/* =========================================================
-   BACKGROUND OVERLAY
-========================================================= */
+/* DARK OVERLAY */
 
 .overlay {
     position: fixed;
-
     inset: 0;
 
-    background: rgba(255, 250, 240, 0.72);
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.92),
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.92)
+        );
 
-    z-index: -1;
+    z-index: 0;
+    pointer-events: none;
 }
 
 
@@ -48,10 +52,15 @@ body {
 ========================================================= */
 
 .page {
-    width: 100%;
-    min-height: 100vh;
+    position: relative;
+    z-index: 1;
 
-    padding: 35px 45px 25px;
+    width: 100%;
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 25px 35px 40px;
 }
 
 
@@ -60,50 +69,46 @@ body {
 ========================================================= */
 
 header {
-    width: 100%;
-
     text-align: center;
-
-    margin-bottom: 25px;
+    margin-bottom: 40px;
 }
 
 header h1 {
-    font-family: "Playfair Display", serif;
+    font-family: "Montserrat", sans-serif;
 
-    font-size: clamp(45px, 6vw, 85px);
+    font-size: clamp(45px, 6vw, 45px);
 
-    font-weight: 400;
+    font-weight: 300;
 
-    font-style: italic;
+    line-height: 0.85;
 
-    letter-spacing: -4px;
+    letter-spacing: -8px;
 
-    color: #493a30;
+    color: #f1f3ad;
 
-    line-height: 1;
-
-    text-shadow:
-        2px 2px 0 rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
 }
 
 
 /* =========================================================
-   MAIN WEBSITE LAYOUT
+   MAIN 3 COLUMN LAYOUT
 ========================================================= */
 
 .website {
-    width: 100%;
-
     display: grid;
 
     grid-template-columns:
-        210px
-        minmax(0, 1fr)
-        180px;
+        170px
+        minmax(0, 450px)
+        100px;
 
-    gap: 35px;
+    justify-content: center;
 
     align-items: start;
+
+    column-gap: 45px;
+
+    width: 100%;
 }
 
 
@@ -116,49 +121,48 @@ header h1 {
 }
 
 .nav-section {
-    margin-bottom: 35px;
+    margin-bottom: 27px;
 }
 
 .nav-section h2 {
-    font-family: "Playfair Display", serif;
+    margin-bottom: 5px;
 
-    font-size: 28px;
+    font-size: 23px;
 
     font-weight: 400;
 
-    font-style: italic;
-
-    margin-bottom: 8px;
-
-    text-transform: lowercase;
+    line-height: 1;
 }
 
 .nav-section p {
-    font-size: 12px;
+    font-size: 9px;
 
-    line-height: 1.7;
+    line-height: 1.5;
 
-    color: #5f5147;
+    color: rgba(255, 255, 255, 0.85);
 }
 
+
+/* COLORS */
+
 .blue {
-    color: #6e91a8;
+    color: #3dbce9;
 }
 
 .pink {
-    color: #c88491;
+    color: #ff7088;
 }
 
 .yellow {
-    color: #c7a448;
+    color: #f0ed98;
 }
 
 .purple {
-    color: #8c789e;
+    color: #d98be9;
 }
 
 .green {
-    color: #7d9273;
+    color: #b9df62;
 }
 
 
@@ -167,96 +171,78 @@ header h1 {
 ========================================================= */
 
 .content {
+    width: 100%;
+
+    display: block;
+
     min-width: 0;
-
-    height: 700px;
-
-    min-height: 0;
 }
 
 
 /* =========================================================
    NEWS FEED
-   ONLY THIS AREA SCROLLS
+   IMPORTANT:
+   CARDS WILL ALWAYS STACK VERTICALLY
 ========================================================= */
 
 .news-feed {
-    width: 100%;
+    display: flex !important;
 
-    height: 700px;
-
-    max-height: 700px;
-
-    display: flex;
-
-    flex-direction: column;
+    flex-direction: column !important;
 
     align-items: center;
 
+    justify-content: flex-start;
+
+    width: 100%;
+
     gap: 60px;
 
-    padding: 10px 20px 30px;
+    padding: 5px 5px 40px;
 
-    overflow-y: scroll;
+    max-height: none;
 
-    overflow-x: hidden;
+    overflow: visible;
 
-    overscroll-behavior: contain;
-
-    scrollbar-width: auto;
-
-    scrollbar-color: #8d7563 rgba(255, 255, 255, 0.45);
+    flex-wrap: nowrap !important;
 }
 
 
 /* =========================================================
-   CUSTOM SCROLLBAR
-========================================================= */
-
-.news-feed::-webkit-scrollbar {
-    width: 12px;
-}
-
-.news-feed::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.45);
-
-    border-radius: 20px;
-}
-
-.news-feed::-webkit-scrollbar-thumb {
-    background: #8d7563;
-
-    border-radius: 20px;
-
-    border: 3px solid rgba(255, 255, 255, 0.45);
-}
-
-.news-feed::-webkit-scrollbar-thumb:hover {
-    background: #624f42;
-}
-
-
-/* =========================================================
-   GOSSIP CARD
+   GOSSIP CARDS
 ========================================================= */
 
 .gossip-card {
+    display: block !important;
+
+    position: relative;
+
     width: 100%;
 
-    max-width: 520px;
+    max-width: 430px;
 
-    flex: 0 0 auto;
+    flex: 0 0 auto !important;
 
-    background: rgba(255, 252, 247, 0.96);
+    float: none !important;
 
-    border: 1px solid rgba(101, 79, 62, 0.18);
+    clear: both;
+
+    order: initial;
+
+    margin: 0;
+
+    background: #f3f1df;
+
+    color: #111;
+
+    padding: 10px;
+
+    border-radius: 7px;
 
     box-shadow:
-        0 15px 35px rgba(67, 47, 34, 0.15);
+        0 20px 50px rgba(0, 0, 0, 0.55);
 
-    overflow: hidden;
-
-    border-radius: 3px;
+    animation: cardAppear 0.6s ease;
 }
 
 
@@ -265,19 +251,13 @@ header h1 {
 ========================================================= */
 
 .card-header {
-    padding: 18px 22px;
+    padding: 7px 10px 11px;
 
-    background: #eee4d8;
+    font-size: 14px;
 
-    color: #46382f;
-
-    font-family: "Playfair Display", serif;
-
-    font-size: 21px;
+    font-weight: 600;
 
     line-height: 1.35;
-
-    font-style: italic;
 }
 
 
@@ -290,9 +270,13 @@ header h1 {
 
     width: 100%;
 
-    height: 310px;
+    height: 300px;
 
     object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 3px;
 }
 
 
@@ -301,27 +285,25 @@ header h1 {
 ========================================================= */
 
 .story {
-    padding: 24px 25px 20px;
+    padding: 15px 10px 8px;
 }
 
-.story p {
-    font-family: "Montserrat", sans-serif;
+.story > p:first-child {
+    margin-bottom: 12px;
 
-    font-size: 14px;
+    font-family: "Playfair Display", serif;
 
-    line-height: 1.8;
+    font-size: 17px;
 
-    color: #44382f;
-
-    margin-bottom: 15px;
+    line-height: 1.45;
 }
 
-.story p.small {
-    font-size: 12px;
+.story .small {
+    margin-bottom: 10px;
 
-    color: #77685c;
+    font-size: 11px;
 
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
 
@@ -334,54 +316,38 @@ header h1 {
 
     align-items: center;
 
-    justify-content: space-between;
-
     gap: 10px;
 
-    margin-top: 20px;
+    margin-top: 16px;
 
-    padding-top: 15px;
+    color: #777;
 
-    border-top: 1px solid rgba(75, 58, 45, 0.15);
-
-    font-size: 10px;
-
-    color: #88776a;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.5px;
+    font-size: 8px;
 }
 
 .story-footer button {
+    margin-left: auto;
+
     border: none;
 
     background: transparent;
 
-    color: #725c4d;
+    color: #169dcc;
 
     font-family: "Montserrat", sans-serif;
 
     font-size: 10px;
 
-    text-transform: uppercase;
-
-    letter-spacing: 0.5px;
-
     cursor: pointer;
-
-    transition: 0.2s ease;
 }
 
 .story-footer button:hover {
-    color: #b06c7b;
-
-    transform: translateX(3px);
+    text-decoration: underline;
 }
 
 
 /* =========================================================
-   RIGHT CHARACTER COLUMN
+   RIGHT CHARACTER MENU
 ========================================================= */
 
 .characters {
@@ -389,58 +355,55 @@ header h1 {
 
     flex-direction: column;
 
-    gap: 18px;
+    align-items: center;
+
+    gap: 22px;
 
     padding-top: 15px;
 }
 
 .character {
-    width: 100%;
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
 
     border: none;
 
     background: transparent;
 
+    color: white;
+
     cursor: pointer;
 
-    text-align: center;
-
-    font-family: "Playfair Display", serif;
-
-    color: #493a30;
-
-    transition:
-        transform 0.25s ease,
-        opacity 0.25s ease;
+    transition: transform 0.25s ease;
 }
 
 .character:hover {
-    transform: translateY(-5px);
-
-    opacity: 0.8;
+    transform: scale(1.08);
 }
 
 .character img {
-    display: block;
+    width: 62px;
 
-    width: 100%;
-
-    height: 150px;
+    height: 62px;
 
     object-fit: cover;
 
-    border-radius: 2px;
+    border-radius: 50%;
 
-    box-shadow:
-        0 8px 20px rgba(55, 40, 30, 0.15);
+    border: 2px solid #eff1a2;
 
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 .character span {
-    font-size: 17px;
+    color: #f0f3b0;
 
-    font-style: italic;
+    font-family: "Playfair Display", serif;
+
+    font-size: 13px;
 }
 
 
@@ -449,87 +412,100 @@ header h1 {
 ========================================================= */
 
 .community-gossip {
-    width: 100%;
+    display: none;
 
-    max-width: 700px;
+    width: min(100%, 500px);
 
-    margin: 35px auto 0;
+    margin: 45px auto 0;
 }
 
 .community-gossip.has-gossip {
-    display: block;
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
 }
 
+
+/* USER GOSSIP CARD */
+
 .user-gossip {
-    background: rgba(255, 252, 247, 0.95);
+    width: 100%;
 
-    border-left: 4px solid #b78491;
+    padding: 15px 18px;
 
-    padding: 15px 20px;
+    background: #f3f1df;
 
-    margin-bottom: 12px;
+    color: #111;
+
+    border-left: 4px solid #e66f87;
+
+    border-radius: 4px;
 
     box-shadow:
-        0 8px 20px rgba(60, 45, 35, 0.08);
+        0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .gossip-user {
-    font-family: "Playfair Display", serif;
-
-    font-style: italic;
-
-    font-size: 15px;
-
-    color: #8c6570;
-
     margin-bottom: 6px;
-}
 
-.gossip-message {
-    font-size: 13px;
+    color: #e66f87;
 
-    line-height: 1.6;
+    font-size: 9px;
 
-    color: #4b4038;
-}
-
-
-/* =========================================================
-   SUBMIT AREA
-========================================================= */
-
-.submit-area {
-    text-align: center;
-
-    margin: 35px 0;
-}
-
-.submit-button {
-    padding: 13px 25px;
-
-    border: 1px solid #8d7563;
-
-    background: rgba(255, 252, 247, 0.8);
-
-    color: #59483d;
-
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 11px;
+    font-weight: 600;
 
     text-transform: uppercase;
 
     letter-spacing: 1px;
+}
+
+.gossip-message {
+    font-family: "Playfair Display", serif;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.submit-area {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 35px;
+}
+
+.submit-button {
+    padding: 10px 22px;
+
+    border: 1px solid #f0f3b0;
+
+    background: transparent;
+
+    color: #f0f3b0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1.3px;
 
     cursor: pointer;
 
-    transition: all 0.25s ease;
+    transition: 0.25s;
 }
 
 .submit-button:hover {
-    background: #59483d;
+    background: #f0f3b0;
 
-    color: white;
+    color: #111;
 
     transform: translateY(-2px);
 }
@@ -540,11 +516,13 @@ header h1 {
 ========================================================= */
 
 .modal {
+    display: none;
+
     position: fixed;
 
     inset: 0;
 
-    display: none;
+    z-index: 100;
 
     align-items: center;
 
@@ -552,9 +530,9 @@ header h1 {
 
     padding: 20px;
 
-    background: rgba(45, 34, 28, 0.55);
+    background: rgba(0, 0, 0, 0.78);
 
-    z-index: 1000;
+    backdrop-filter: blur(8px);
 }
 
 .modal.active {
@@ -562,76 +540,112 @@ header h1 {
 }
 
 
-/* =========================================================
-   MODAL BOX
-========================================================= */
+/* MODAL BOX */
 
 .modal-box {
     position: relative;
 
-    width: 100%;
+    width: min(100%, 440px);
 
-    max-width: 500px;
+    padding: 30px;
 
-    background: #fffaf4;
+    background: #f3f1df;
 
-    padding: 35px;
+    color: #111;
+
+    border-radius: 7px;
 
     box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.25);
+        0 25px 80px rgba(0, 0, 0, 0.65);
 }
 
 .modal-box h2 {
+    margin-bottom: 5px;
+
     font-family: "Playfair Display", serif;
 
     font-size: 32px;
 
     font-weight: 400;
-
-    font-style: italic;
-
-    color: #4b3b31;
-
-    margin-bottom: 5px;
 }
 
 .modal-subtitle {
-    font-size: 12px;
+    margin-bottom: 20px;
 
-    color: #806f62;
+    color: #777;
 
-    margin-bottom: 25px;
+    font-size: 11px;
+
+    line-height: 1.5;
 }
+
+
+/* CLOSE BUTTON */
+
+.close-button {
+    position: absolute;
+
+    top: 10px;
+
+    right: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #555;
+
+    font-size: 27px;
+
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
 
 .modal-box label {
     display: block;
 
-    font-size: 11px;
+    margin-top: 15px;
+
+    margin-bottom: 6px;
+
+    color: #777;
+
+    font-size: 9px;
+
+    font-weight: 600;
 
     text-transform: uppercase;
 
     letter-spacing: 1px;
-
-    color: #65554a;
-
-    margin: 15px 0 7px;
 }
 
 .modal-box input,
 .modal-box textarea {
     width: 100%;
 
-    border: 1px solid #d6c8bc;
+    padding: 11px;
 
-    background: #fffdf9;
+    border: 1px solid #ccc;
 
-    padding: 12px;
+    border-radius: 3px;
+
+    outline: none;
+
+    background: white;
+
+    color: #111;
 
     font-family: "Montserrat", sans-serif;
 
-    font-size: 13px;
-
-    outline: none;
+    font-size: 12px;
 }
 
 .modal-box textarea {
@@ -642,53 +656,36 @@ header h1 {
 
 .modal-box input:focus,
 .modal-box textarea:focus {
-    border-color: #9d8170;
+    border-color: #888;
 }
 
-.close-button {
-    position: absolute;
 
-    top: 12px;
-
-    right: 15px;
-
-    border: none;
-
-    background: transparent;
-
-    font-size: 28px;
-
-    color: #756257;
-
-    cursor: pointer;
-}
+/* POST BUTTON */
 
 .post-button {
     width: 100%;
 
     margin-top: 20px;
 
-    padding: 13px;
+    padding: 12px;
 
     border: none;
 
-    background: #5d4a3d;
+    background: #111;
 
-    color: white;
+    color: #f0f3b0;
 
     font-family: "Montserrat", sans-serif;
 
-    font-size: 11px;
+    font-size: 10px;
 
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 
     cursor: pointer;
-
-    transition: 0.2s ease;
 }
 
 .post-button:hover {
-    background: #806657;
+    background: #333;
 }
 
 
@@ -697,17 +694,35 @@ header h1 {
 ========================================================= */
 
 footer {
+    margin-top: 35px;
+
     text-align: center;
 
-    padding: 10px 0 20px;
+    color: #f0f3b0;
 
     font-family: "Playfair Display", serif;
 
-    font-style: italic;
+    font-size: 13px;
+}
 
-    font-size: 15px;
 
-    color: #6d5b4e;
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
 }
 
 
@@ -715,7 +730,7 @@ footer {
    TABLET
 ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
 
     .page {
         padding: 25px;
@@ -723,21 +738,28 @@ footer {
 
     .website {
         grid-template-columns:
-            170px
-            minmax(0, 1fr)
-            140px;
+            140px
+            minmax(0, 420px)
+            80px;
 
-        gap: 20px;
+        column-gap: 25px;
     }
 
-    .main-image {
-        height: 280px;
+    header h1 {
+        font-size: 85px;
+
+        letter-spacing: -5px;
+    }
+
+    .nav-section h2 {
+        font-size: 21px;
     }
 
     .character img {
-        height: 120px;
-    }
+        width: 55px;
 
+        height: 55px;
+    }
 }
 
 
@@ -745,125 +767,133 @@ footer {
    MOBILE
 ========================================================= */
 
-@media (max-width: 750px) {
+@media (max-width: 700px) {
 
     body {
-        overflow: auto;
+        background-attachment: scroll;
     }
 
     .page {
-        padding: 20px 15px;
+        padding: 20px;
     }
 
     header {
-        margin-bottom: 25px;
+        margin-bottom: 35px;
     }
 
     header h1 {
-        font-size: 43px;
+        font-size: 55px;
 
-        letter-spacing: -2px;
+        letter-spacing: -4px;
     }
+
+
+    /* MAIN LAYOUT */
 
     .website {
         display: flex;
 
         flex-direction: column;
 
-        gap: 25px;
+        align-items: center;
+
+        gap: 35px;
     }
+
+
+    /* SIDEBAR */
 
     .sidebar {
         display: grid;
 
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
 
-        gap: 20px;
+        gap: 18px;
 
-        padding: 0;
+        width: 100%;
     }
 
     .nav-section {
         margin-bottom: 0;
     }
 
-    .nav-section h2 {
-        font-size: 22px;
-    }
 
-    .nav-section p {
-        font-size: 11px;
-    }
+    /* CONTENT */
 
     .content {
         width: 100%;
-
-        height: 600px;
     }
+
+
+    /* CARDS */
 
     .news-feed {
-        height: 600px;
+        display: flex !important;
 
-        max-height: 600px;
+        flex-direction: column !important;
 
-        padding: 5px 10px 25px;
-    }
+        align-items: center;
 
-    .gossip-card {
-        max-width: 100%;
-    }
+        gap: 40px;
 
-    .main-image {
-        height: 250px;
-    }
+        width: 100%;
 
-    .characters {
-        display: grid;
+        max-height: none;
 
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 20px;
+        overflow: visible;
 
         padding: 0;
     }
 
-    .character img {
-        height: 180px;
+    .gossip-card {
+        width: 100%;
+
+        max-width: 450px;
+
+        flex: 0 0 auto !important;
     }
 
+
+    /* CHARACTERS */
+
+    .characters {
+        flex-direction: row;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    /* COMMUNITY */
+
+    .community-gossip {
+        width: 100%;
+    }
 }
 
 
 /* =========================================================
-   SMALL PHONES
+   SMALL PHONE
 ========================================================= */
 
 @media (max-width: 450px) {
 
     header h1 {
-        font-size: 36px;
+        font-size: 43px;
+
+        letter-spacing: -3px;
     }
 
     .sidebar {
-        grid-template-columns: 1fr;
+        gap: 12px;
     }
 
-    .content {
-        height: 550px;
-    }
-
-    .news-feed {
-        height: 550px;
-
-        max-height: 550px;
+    .nav-section h2 {
+        font-size: 18px;
     }
 
     .main-image {
-        height: 220px;
+        height: 250px;
     }
-
-    .story-footer {
-        flex-wrap: wrap;
-    }
-
 }
