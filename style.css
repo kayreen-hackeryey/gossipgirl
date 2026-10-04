@@ -76,13 +76,13 @@ header {
 header h1 {
     font-family: "Montserrat", sans-serif;
 
-    font-size: clamp(30px, 10vw, 45px);
+    font-size: clamp(40px, 10vw, 60px);
 
     font-weight: 300;
 
-    line-height: 0.85;
+    line-height: 1;
 
-    letter-spacing: -6px;
+    letter-spacing: -2px;
 
     color: #f1f3ad;
 
@@ -99,7 +99,7 @@ header h1 {
 
     grid-template-columns:
         170px
-        minmax(0, 450px)
+        minmax(0, 400px)
         100px;
 
     justify-content: center;
@@ -219,7 +219,7 @@ header h1 {
 
     width: 100%;
 
-    max-width: 430px;
+    max-width: 360px;
 
     flex: 0 0 auto !important;
 
@@ -270,7 +270,7 @@ header h1 {
 
     width: 100%;
 
-    height: 300px;
+    height: 260px;
 
     object-fit: cover;
 
@@ -739,16 +739,16 @@ footer {
     .website {
         grid-template-columns:
             140px
-            minmax(0, 420px)
+            minmax(0, 380px)
             80px;
 
         column-gap: 25px;
     }
 
     header h1 {
-        font-size: 85px;
+        font-size: 65px;
 
-        letter-spacing: -5px;
+        letter-spacing: -2px;
     }
 
     .nav-section h2 {
@@ -784,7 +784,7 @@ footer {
     header h1 {
         font-size: 55px;
 
-        letter-spacing: -4px;
+        letter-spacing: -2px;
     }
 
 
@@ -848,7 +848,7 @@ footer {
     .gossip-card {
         width: 100%;
 
-        max-width: 450px;
+        max-width: 380px;
 
         flex: 0 0 auto !important;
     }
@@ -882,7 +882,7 @@ footer {
     header h1 {
         font-size: 43px;
 
-        letter-spacing: -3px;
+        letter-spacing: -1px;
     }
 
     .sidebar {
